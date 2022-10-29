@@ -55,8 +55,8 @@ img {
 
 .wizard > .steps {
   position: absolute;
-  top: 27.44%;
-  right: 30%;
+    top: 15.44%;
+    right: 37%;
   transform: translateX(50%);
   z-index: 9; }
 
@@ -124,8 +124,8 @@ img {
   height: 521px; }
 
 .form-content {
-  width: 60%;
-  padding-top: 65px;
+  width: 100%;
+  padding-top: 10px;
   padding-left: 51px;
   padding-right: 51px; }
 
@@ -141,7 +141,7 @@ h3 {
   padding: 5px 15px;
   display: inline-block;
   border: 1px solid #dad8e4;
-  margin-bottom: 75px; }
+  margin-bottom: 85px; }
 
 p {
   font-family: "Muli-SemiBold";
@@ -203,6 +203,7 @@ p {
 .form-control {
   height: 37px;
   border: none;
+  padding: 10px;
   /*border-bottom: 2px solid #e6e6e6;*/
   width: 100%;
   color: #666; }
@@ -404,6 +405,7 @@ textarea.form-control {
 
   .wizard {
     height: 100%; }
+
     .wizard > .steps {
       right: 50%;
       top: 52%;
@@ -415,3 +417,61 @@ textarea.form-control {
     bottom: 3%; } }
 
 /*# sourceMappingURL=style.css.map */
+.wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    height: 50vh;
+    /*padding: 2rem;*/
+    /*background-color: #eee;*/
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1rem;
+    /*background-color: #fff;*/
+    width: 768px;
+    height: 100%;
+    /*border-radius: 0.25rem;*/
+    /*box-shadow: 0rem 1rem 2rem -0.25rem rgba(0, 0, 0, 0.25);*/
+}
+/*.container__heading {*/
+/*    padding: 1rem 0;*/
+/*    border-bottom: 1px solid #ccc;*/
+/*    text-align: center;*/
+/*}*/
+.container__heading > h2 {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    margin: 0;
+}
+.container__content {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+.container__nav {
+    border-top: 1px solid #ccc;
+    text-align: right;
+    padding: 2rem 0 1rem;
+}
+.container__nav > .button {
+    background-color: #444499;
+    box-shadow: 0rem 0.5rem 1rem -0.125rem rgba(0, 0, 0, 0.25);
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.container__nav > .button:hover {
+    box-shadow: 0rem 0rem 1rem -0.125rem rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.5rem);
+}
+.container__nav > small {
+    color: #777;
+    margin-right: 1rem;
+}

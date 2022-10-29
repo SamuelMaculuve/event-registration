@@ -23,42 +23,44 @@ class EventRegistrationController extends Controller
 
     public function store(Request $request)
     {
+
         $eRegistion = new eventRegistration();
         $eCompany = new eventCompany();
         $eRepresentative = new eventRepresentative();
         $socialNetworks = new socialNetworks();
 
-        $request->validate([
-            'company_name' => 'required',
-            'area_operation' => 'required',
-            'nuit' => 'required',
-            'company_type' => 'required',
-            'province' => 'required',
-            'location' => 'required',
-            'action_time_market' => 'required',
-            'expectations' => 'required',
-            'lot' => 'required|number',
-            'terms_conditions' => 'required',
-
-            'social_instagram' => '',
-            'social_facebook' => '',
-            'social_linkedin' => '',
-            'social_website' => '',
-            'social_tiktik' => '',
-            'social_outra' => '',
-
-            'full_name' => 'required',
-            'r_role' => 'required',
-            'r_email' => 'required',
-            'r_cell' => 'required',
-
-            'c_email' => 'required',
-            'c_cell' => 'required',
-            'c_telefone' => 'required',
-            'c_whatsapp' => 'required',
-            'contact_nuit' => 'required',
-            'c_logo' => 'required',
-        ]);
+//        $request->validate([
+//
+//            'company_name' => 'required',
+//            'area_operation' => 'required',
+//            'nuit' => 'required',
+//            'company_type' => 'required',
+//            'province' => 'required',
+//            'location' => 'required',
+//            'action_time_market' => 'required',
+//            'expectations' => 'required',
+//            'lot' => 'required|number',
+//            'terms_conditions' => 'required',
+//
+//            'social_instagram' => '',
+//            'social_facebook' => '',
+//            'social_linkedin' => '',
+//            'social_website' => '',
+//            'social_tiktik' => '',
+//            'social_outra' => '',
+//
+//            'full_name' => 'required',
+//            'r_role' => 'required',
+//            'r_email' => 'required',
+//            'r_cell' => 'required',
+//
+//            'c_email' => 'required',
+//            'c_cell' => 'required',
+//            'c_telefone' => 'required',
+//            'c_whatsapp' => 'required',
+//            'contact_nuit' => 'required',
+//            'c_logo' => 'required',
+//        ]);
 
         $eRegistion->company_name = $request->company_name;
         $eRegistion->area_operation = $request->area_operation;
@@ -68,8 +70,8 @@ class EventRegistrationController extends Controller
         $eRegistion->location = $request->location;
         $eRegistion->action_time_market = $request->action_time_market;
         $eRegistion->expectations = $request->expectations;
-        $eRegistion->lot = $request->lot;
-        $eRegistion->terms_conditions = $request->terms_conditions;
+        $eRegistion->lot = 100;
+        $eRegistion->terms_conditions = true;
         $eRegistion->save();
 
         $socialNetworks->social_instagram = $request->social_instagram;
@@ -82,18 +84,19 @@ class EventRegistrationController extends Controller
         $socialNetworks->save();
 
         $eRepresentative->full_name = $request->social_instagram;
-        $eRepresentative->r_role = $request->r_role;
+        $eRepresentative->role = 10;
         $eRepresentative->r_email = $request->r_email;
         $eRepresentative->r_cell = $request->r_cell;
+        $eRepresentative->r_whatsapp = $request->r_whatsapp;
         $eRepresentative->event_registration_id = $eRegistion->id;
         $eRepresentative->save();
 
         $eCompany->c_email = $request->c_email;
-        $eCompany->c_cell = $request->c_cell;
-        $eCompany->c_telefone = $request->c_telefone;
-        $eCompany->c_whatsapp = $request->c_whatsapp;
-        $eCompany->contact_nuit = $request->contact_nuit;
-        $eCompany->c_logo = $request->c_logo;
+        $eCompany->c_cell = 10;
+        $eCompany->c_telefone = 10;
+        $eCompany->c_whatsapp = 10;
+        $eCompany->c_contact_nuit = 10;
+        $eCompany->c_logo = 10;
         $eCompany->event_registration_id = $eRegistion->id;
         $eCompany->save();
 

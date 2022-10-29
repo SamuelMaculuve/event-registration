@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/registration', function () {
+Route::get('/', function () {
     return view('registration');
 });
 
@@ -31,3 +31,4 @@ Route::get('/list', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/eventRegistration','\App\Http\Controllers\EventRegistrationController');
