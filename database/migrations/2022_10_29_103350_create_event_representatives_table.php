@@ -17,9 +17,9 @@ class CreateEventRepresentativesTable extends Migration
             $table->id();
             $table->string('full_name');
             $table->string('role');
-            $table->string('email');
-            $table->string('cell');
-            $table->string('whatsapp');
+            $table->string('r_email');
+            $table->string('r_cell');
+            $table->string('r_whatsapp');
             $table->unsignedBigInteger('event_registration_id')->nullable();
             $table->foreign('event_registration_id')->references('id')->on('event_registrations')->onDelete('cascade');
             $table->timestamps();
