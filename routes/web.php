@@ -38,7 +38,7 @@ Route::get('/successful', function () {
 Auth::routes();
 
 
-Route::post('/approve', [App\Http\Controllers\EventRegistrationController::class, 'approveCompany'])->name('approve');
+Route::post('/approve/{eventRegistration}', [App\Http\Controllers\EventRegistrationController::class, 'approveCompany'])->name('approve');
 Route::resource('/eventRegistration','\App\Http\Controllers\EventRegistrationController');
 Route::get('generate-pdf', [App\Http\Controllers\EventRegistrationController::class, 'generatePDF'])->name('generate-pdf');
 Route::group(['middleware' => ['auth']], function() {

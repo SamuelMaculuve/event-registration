@@ -65,13 +65,13 @@ class EventRegistrationController extends Controller
 
         $eRegistion->company_name = $request->company_name;
         $eRegistion->area_operation = $request->area_operation;
-        $eRegistion->nuit = $request->nuit;
+        $eRegistion->nuit = 12;
         $eRegistion->company_type = $request->company_type;
         $eRegistion->province = $request->province;
         $eRegistion->location = $request->location;
         $eRegistion->action_time_market = $request->action_time_market;
         $eRegistion->expectations = $request->expectations;
-        $eRegistion->lot = 100;
+        $eRegistion->lot = $request->lot;
         $eRegistion->terms_conditions = true;
         $eRegistion->save();
 
@@ -84,7 +84,7 @@ class EventRegistrationController extends Controller
         $socialNetworks->event_registration_id = $eRegistion->id;
         $socialNetworks->save();
 
-        $eRepresentative->full_name = $request->social_instagram;
+        $eRepresentative->full_name = $request->full_name;
         $eRepresentative->role = $request->role;
         $eRepresentative->r_email = $request->r_email;
         $eRepresentative->r_cell = $request->r_cell;
@@ -110,23 +110,49 @@ class EventRegistrationController extends Controller
         return view('dashboard.show',compact('eventRegistration'));
     }
 
-    public function approveCompany(eventRegistration $eventRegistration)
+    /**
+     * Aprova uma determinada empresa.
+     * @param eventRegistration $eventRegistration
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function approveCompany(Request $reg,eventRegistration $eventRegistration)
     {
-        $eventRegistration->payment_state = true;
 
-        $eventRegistration->update($eventRegistration->all());
+        if ($eventRegistration->payment_state == 1 && $reg->toSend == 1){
 
-        return redirect()->back()->with(['message' => 'Empresa aprovada com sucesso.']);
+            return redirect()->back()->with(['message' => 'Falha ao aprovar Empresa.']);
+
+        }else{
+
+            $eventRegistration->update([
+                 'payment_state' => 1,
+             ]);
+
+            return redirect()->back()->with(['message' => 'Empresa aprovada com sucesso.']);
+        }
+
     }
 
     public function edit(eventRegistration $eventRegistration)
     {
-        //
+
     }
 
     public function update(Request $request, eventRegistration $eventRegistration)
     {
-        //
+        dd($eventRegistration);
+        if ($eventRegistration->payment_state == 1 && $reg->toSend == 1){
+
+            return redirect()->back()->with(['message' => 'Falha ao aprovar Empresa.']);
+
+        }else{
+
+            $eventRegistration->update([
+                'payment_state' => 1,
+            ]);
+
+            return redirect()->back()->with(['message' => 'Empresa aprovada com sucesso.']);
+        }
     }
 
 
@@ -137,6 +163,11 @@ class EventRegistrationController extends Controller
         return redirect()->route('dashboard.index')
             ->with('message','Registro apagado com sucesso.');
     }
+
+    /***
+     * Gera relatorios de todas as empresas
+     * @return \Illuminate\Http\Response
+     */
     public function generatePDF()
     {
         $data = eventRegistration::all();

@@ -44,31 +44,46 @@
                             <input type="number" placeholder="Nuit"
                                    class="form-control" name="nuit">
                         </div>
+
                         <div class="form-holder">
-                            <input type="text" placeholder="Tipo de empresa"
-                                   class="form-control" name="company_type">
+                            <select class="form-control" name="company_type">
+                                <option value="0">--- Selecionar Tipo de empresa ---</option>
+                                <option value="Unipessoal">Unipessoal</option>
+                                <option value="Limitada">Limitada</option>
+                                <option value="Sociedade anônima">Sociedade anônima</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-holder">
-                            <input type="text" placeholder="Província"
-                                   class="form-control" name="province">
+                            <select class="form-control" name="province">
+                                <option value="0">Selecionar Provincia</option>
+                                <option value="Cabo Delgado">Cabo Delgado</option>
+                                <option value="Gaza">Gaza</option>
+                                <option value="Inhambane">Inhambane</option>
+                                <option value="Manica">Manica</option>
+                                <option value="Maputo">Maputo</option>
+                                <option value="Cidade de Maputo">Cidade de Maputo</option>
+                                <option value="Nampula">Nampula</option>
+                                <option value="Niassa">Niassa</option>
+                                <option value="Sofala">Sofala</option>
+                                <option value="Tete">Tete</option>
+                                <option value="Zambezia">Zambezia</option>
+                            </select>
+
                         </div>
                         <div class="form-holder">
                             <input type="text" placeholder="Localização"
                                    class="form-control" name="location">
                         </div>
-                    </div>
-                    <div class="form-row">
                         <div class="form-holder">
-                            <input type="number" placeholder="Tempo de Actuação no mercado"
-                                   class="form-control" name="action_time_market">
-                        </div>
-                        <div class="form-holder">
-                            <input type="text" placeholder="Tipo de empresa"
-                                   class="form-control" name="company_type">
-                        </div>
+                        <input type="number" placeholder="Tempo de Actuação no mercado"
+                               class="form-control" name="action_time_market">
                     </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -149,11 +164,11 @@
 
                     <div class="form-row">
                         <div class="form-holder">
-                            <input name="c_email" type="text" placeholder="E-mail"
+                            <input name="c_email" type="email" placeholder="E-mail"
                                    class="form-control">
                         </div>
                         <div class="form-holder">
-                            <input name="c_cell" type="text" placeholder="Cell"
+                            <input name="c_cell" type="number" placeholder="Cell"
                                    class="form-control">
                         </div>
 
@@ -209,11 +224,11 @@
 
                     <div class="form-row">
                         <div class="form-holder">
-                            <input name="r_cell" type="text" placeholder="Cell"
+                            <input name="r_cell" type="number" placeholder="Cell"
                                    class="form-control">
                         </div>
                         <div class="form-holder">
-                            <input name="r_whatsapp" type="text" placeholder="Whatsapp"
+                            <input name="r_whatsapp" type="number" placeholder="Whatsapp"
                                    class="form-control">
                         </div>
 
@@ -237,7 +252,7 @@
 
                     <div class="form-row">
                         <div class="form-holder w-100">
-                            <textarea name="expectations" id="" placeholder="Quais são as suas expectativas para este evento?" class="form-control" style="height: 99px;"></textarea>
+                            <textarea  name="expectations" id="" placeholder="Quais são as suas expectativas para este evento?" class="form-control" style="height: 99px;"></textarea>
                         </div>
                     </div>
 
@@ -261,18 +276,24 @@
                             <div class="db-wrapper">
                                 <div class="db-pricing-eleven db-bk-color-one">
                                     <div class="price">
-                                        1° Lote– 8500 MT + IVA
+                                        1° Lote-8500MT + IVA
                                     </div>
 
                                     <ul>
-
-                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Acesso a sala </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Stand para exposição
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Apresentação (Pitch)</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Certificado de Participação Físico
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Networking</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Fotos</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Lunch</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Brinde</li>
                                     </ul>
                                     <div class="pricing-footer">
-
-                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                        <input style="width: 15pt;height: 15pt;" onclick="return ValidatePetSelection();"
+                                            type="checkbox"  name="lot" value="8500" />
                                     </div>
                                 </div>
                             </div>
@@ -281,18 +302,24 @@
                             <div class="db-wrapper">
                                 <div class="db-pricing-eleven db-bk-color-two popular">
                                     <div class="price">
-                                        2° Lote- 4500MT+ IVA
+                                        2° Lote-4500MT+IVA
                                     </div>
 
                                     <ul>
-
-                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Acesso a sala </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Stand para exposição
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Apresentação (Pitch)</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Certificado de Participação Físico
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Networking</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Fotos</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Lunch</li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Brinde</li>
                                     </ul>
                                     <div class="pricing-footer">
-
-                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                        <input style="width: 15pt;height: 15pt;" onclick="return ValidatePetSelection();"
+                                               type="checkbox"  name="lot" value="4500" />
                                     </div>
                                 </div>
                             </div>
@@ -301,18 +328,24 @@
                             <div class="db-wrapper">
                                 <div class="db-pricing-eleven db-bk-color-three">
                                     <div class="price">
-                                        3°  Lote – 4000+IVA
+                                        3° Lote-4000MT+IVA
                                     </div>
 
                                     <ul>
-
-                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Acesso a sala </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Stand para exposição
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Apresentação (Pitch)</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Certificado de Participação Físico
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Networking</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Fotos</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Lunch</li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Brinde</li>
                                     </ul>
                                     <div class="pricing-footer">
-
-                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                        <input style="width: 15pt;height: 15pt;" onclick="return ValidatePetSelection();"
+                                               type="checkbox"  name="lot" value="4000" />
                                     </div>
                                 </div>
                             </div>
@@ -321,18 +354,24 @@
                             <div class="db-wrapper">
                                 <div class="db-pricing-eleven db-bk-color-six">
                                     <div class="price">
-                                        4° Lote- 2500 + IVA
+                                        4° Lote-2500MT+IVA
                                     </div>
 
                                     <ul>
-
-                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Acesso a sala </li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Stand para exposição
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Apresentação (Pitch)</li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Certificado de Participação Físico
+                                        </li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Networking</li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Fotos</li>
+                                        <li><i class="glyphicon glyphicon-ok"></i>Lunch</li>
+                                        <li><i class="glyphicon glyphicon-remove"></i>Brinde</li>
                                     </ul>
                                     <div class="pricing-footer">
-
-                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                        <input style="width: 15pt;height: 15pt;" onclick="return ValidatePetSelection();"
+                                               type="checkbox"  name="lot" value="2500" />
                                     </div>
                                 </div>
                             </div>

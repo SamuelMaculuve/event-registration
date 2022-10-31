@@ -95,7 +95,6 @@
                         @endif
                     </td>
                     <td> {{$eRegistion->eventrepresentative->full_name}}</td>
-
                 </tr>
                 <!--end::Table row-->
             @endforeach

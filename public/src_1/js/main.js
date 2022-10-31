@@ -62,3 +62,18 @@ $(function(){
 
 
 })
+function ValidatePetSelection()
+{
+    var checkboxes = document.getElementsByName("lot");
+    var numberOfCheckedItems = 0;
+    for(var i = 0; i < checkboxes.length; i++)
+    {
+        if(checkboxes[i].checked)
+            numberOfCheckedItems++;
+    }
+    if(numberOfCheckedItems > 1)
+    {
+        alert("Você não pode selecionar mais de dois animais de estimação favoritos!\n");
+        return false;
+    }
+}
