@@ -144,7 +144,7 @@ class EventRegistrationController extends Controller
             'date' => date('m/d/Y')
         ];
 
-        $pdf = PDF::loadView('myPDF', $data);
+        $pdf = PDF::loadView('registrationpdf', $data);
 
         return $pdf->download('registrationpdf.pdf');
     }
