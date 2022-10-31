@@ -1,9 +1,12 @@
-$('#finish').click(function(){
+$('#terms_conditions').change(function(){
+    if(this.checked) {
+        $('#finish').next().hide();
+    } else {
 
-    console.log("fffffffkh")
-    console.log("fffffffkh")
-    console.log("fffffffkh")
-})
+        $('#finish').next().show();
+    }
+});
+
 $(function(){
 
 	$("#wizard").steps({
@@ -18,7 +21,7 @@ $(function(){
             previous: "Anterior"
         },
         onFinished: function (event, currentIndex) {
-            alert("Alhamdulillah, Alkhery Member is already Registered.");
+            // alert("Alhamdulillah, Alkhery Member is already Registered.");
             $("#wizard").submit();
         }
     });

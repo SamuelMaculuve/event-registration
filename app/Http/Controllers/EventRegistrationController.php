@@ -13,7 +13,7 @@ class EventRegistrationController extends Controller
 
     public function index()
     {
-        //
+        return view('dashboard.index');
     }
 
     public function create()
@@ -84,7 +84,7 @@ class EventRegistrationController extends Controller
         $socialNetworks->save();
 
         $eRepresentative->full_name = $request->social_instagram;
-        $eRepresentative->role = 10;
+        $eRepresentative->role = $request->role;
         $eRepresentative->r_email = $request->r_email;
         $eRepresentative->r_cell = $request->r_cell;
         $eRepresentative->r_whatsapp = $request->r_whatsapp;
@@ -92,20 +92,30 @@ class EventRegistrationController extends Controller
         $eRepresentative->save();
 
         $eCompany->c_email = $request->c_email;
-        $eCompany->c_cell = 10;
-        $eCompany->c_telefone = 10;
-        $eCompany->c_whatsapp = 10;
-        $eCompany->c_contact_nuit = 10;
+        $eCompany->c_cell = $request->c_cell;
+        $eCompany->c_telefone = $request->c_telefone;
+        $eCompany->c_whatsapp = $request->c_whatsapp;
+        $eCompany->c_contact_nuit = $request->c_contact_nuit;
         $eCompany->c_logo = 10;
         $eCompany->event_registration_id = $eRegistion->id;
         $eCompany->save();
 
-        return redirect()->back()->with(['message' => 'Resposta adicionada com sucesso.']);
+        return redirect('/successful');
     }
 
     public function show(eventRegistration $eventRegistration)
     {
-        //
+//        return dd($eventRegistration->eventrepresentative);
+        return view('dashboard.show',compact('eventRegistration'));
+    }
+
+    public function approveCompany(eventRegistration $eventRegistration)
+    {
+        $eventRegistration->payment_state = true;
+
+        $eventRegistration->update($eventRegistration->all());
+
+        return redirect()->back()->with(['message' => 'Empresa aprovada com sucesso.']);
     }
 
     public function edit(eventRegistration $eventRegistration)
@@ -121,6 +131,9 @@ class EventRegistrationController extends Controller
 
     public function destroy(eventRegistration $eventRegistration)
     {
-        //
+        $eventRegistration->delete();
+
+        return redirect()->route('dashboard.index')
+            ->with('message','Registro apagado com sucesso.');
     }
 }

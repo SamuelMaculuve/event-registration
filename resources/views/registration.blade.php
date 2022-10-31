@@ -8,7 +8,8 @@
 
     <!-- MATERIAL DESIGN ICONIC FONT -->
     <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
-
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="{{ asset('src_1/css/style.css') }}">
 </head>
@@ -25,7 +26,7 @@
                 </div>
                 <div class="form-content" >
                     <div class="form-header">
-                        <h3>Informacao da empresa</h3>
+                        <h3>Informação da Empresa</h3>
                     </div>
 
                     <div class="form-row">
@@ -40,7 +41,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-holder">
-                            <input type="text" placeholder="Nuit"
+                            <input type="number" placeholder="Nuit"
                                    class="form-control" name="nuit">
                         </div>
                         <div class="form-holder">
@@ -60,7 +61,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-holder">
-                            <input type="text" placeholder="Tempo de Actuação no mercado"
+                            <input type="number" placeholder="Tempo de Actuação no mercado"
                                    class="form-control" name="action_time_market">
                         </div>
                         <div class="form-holder">
@@ -148,11 +149,11 @@
 
                     <div class="form-row">
                         <div class="form-holder">
-                            <input name="social_instagram" type="text" placeholder="E-mail"
+                            <input name="c_email" type="text" placeholder="E-mail"
                                    class="form-control">
                         </div>
                         <div class="form-holder">
-                            <input name="social_facebook" type="text" placeholder="Cell"
+                            <input name="c_cell" type="text" placeholder="Cell"
                                    class="form-control">
                         </div>
 
@@ -160,15 +161,15 @@
 
                     <div class="form-row">
                         <div class="form-holder">
-                            <input name="social_instagram" type="text" placeholder="Telefone"
+                            <input name="c_telefone" type="number" placeholder="Telefone"
                                    class="form-control">
                         </div>
                         <div class="form-holder">
-                            <input name="social_facebook" type="text" placeholder="Whatsapp"
+                            <input name="c_whatsapp" type="number" placeholder="Whatsapp"
                                    class="form-control">
                         </div>
                         <div class="form-holder">
-                            <input name="social_facebook" type="text" placeholder="Nuit"
+                            <input name="c_contact_nuit" type="number" placeholder="Nuit"
                                    class="form-control">
                         </div>
                     </div>
@@ -255,10 +256,86 @@
                     <div class="form-header">
                         <h3>Queira por favor escolher o seu Lote?</h3>
                     </div>
+                    <div class="row db-padding-btm db-attached">
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="db-wrapper">
+                                <div class="db-pricing-eleven db-bk-color-one">
+                                    <div class="price">
+                                        1° Lote– 8500 MT + IVA
+                                    </div>
 
-                    <div class="form-row">
-                        <div class="form-holder w-100">
-                            <textarea name="" id="" placeholder="Your messagere here!" class="form-control" style="height: 99px;"></textarea>
+                                    <ul>
+
+                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                    </ul>
+                                    <div class="pricing-footer">
+
+                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="db-wrapper">
+                                <div class="db-pricing-eleven db-bk-color-two popular">
+                                    <div class="price">
+                                        2° Lote- 4500MT+ IVA
+                                    </div>
+
+                                    <ul>
+
+                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                    </ul>
+                                    <div class="pricing-footer">
+
+                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="db-wrapper">
+                                <div class="db-pricing-eleven db-bk-color-three">
+                                    <div class="price">
+                                        3°  Lote – 4000+IVA
+                                    </div>
+
+                                    <ul>
+
+                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                    </ul>
+                                    <div class="pricing-footer">
+
+                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                            <div class="db-wrapper">
+                                <div class="db-pricing-eleven db-bk-color-six">
+                                    <div class="price">
+                                        4° Lote- 2500 + IVA
+                                    </div>
+
+                                    <ul>
+
+                                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                                    </ul>
+                                    <div class="pricing-footer">
+
+                                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -438,9 +515,6 @@
                                     </li>
                                 </ol>
                                 <p><br></p>
-                                <p><br></p>
-                                <p><br></p>
-                                <p><br></p>
                                 <p>Cl&aacute;usula #10</p>
                                 <p>Disposi&ccedil;&otilde;es gerais</p>
                                 <p>&nbsp;10.1.&nbsp;O participante concorda em observar integralmente todas as normas, regras e regulamentos internos editados pelo estabelecimento em que o Evento ser&aacute; realizado e/ou pela plataforma em que o evento ser&aacute; disponibilizado, bem como respeitar a leis nacionais, sob pena de n&atilde;o poder participar do evento, em nenhuma de suas modalidades.</p>
@@ -464,7 +538,7 @@
                                 <p>10.10. Quaisquer d&uacute;vidas ou sugest&otilde;es relativas ao Evento poder&atilde;o ser enviadas para&nbsp;<a href="mailto:info@believer.co.mz">info@believer.co.mz</a>&nbsp; e ser&atilde;o apreciadas pela Believer team Leader.&nbsp;</p>
                                 <div class="checkbox-circle mt-24">
                                     <label>
-                                        <input type="checkbox" >  Please accept <a href="#">terms and conditions ?</a>
+                                        <input type="checkbox" id="terms_conditions">  Please accept <a href="#">terms and conditions ?</a>
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>

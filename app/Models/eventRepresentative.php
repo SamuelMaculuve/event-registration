@@ -11,12 +11,7 @@ class eventRepresentative extends Model
 
     protected $guarded = [];
 
-    public function question()
-    {
-        return $this->belongsTo(Question::class);
-    }
-
-    public function eventRegistration()
+    public function eventregistration()
     {
         return $this->belongsTo(eventRegistration::class);
     }

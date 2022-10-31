@@ -9,17 +9,17 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body {
-  font-family: "Muli-Regular";
-  font-size: 15px;
-  color: #999;
-  margin: 0; }
+/*body {*/
+/*  font-family: "Muli-Regular";*/
+/*  font-size: 15px;*/
+/*  color: #999;*/
+/*  margin: 0; }*/
 
-:focus {
-  outline: none; }
+/*:focus {*/
+/*  outline: none; }*/
 
-textarea {
-  resize: none; }
+/*textarea {*/
+/*  resize: none; }*/
 
 input, textarea, select, button {
   font-family: "Muli-Regular";
@@ -44,18 +44,19 @@ img {
 
 .wrapper {
   height: 100vh;
-  background: #f9f6f1;
+  /*background: #f9f6f1;*/
   display: flex;
   align-items: center;
   justify-content: center; }
 
 .wizard {
   width: 100%;
+  height: 100%;
   position: relative; }
 
 .wizard > .steps {
   position: absolute;
-    top: 15.44%;
+    top: 20%;
     right: 37%;
   transform: translateX(50%);
   z-index: 9; }
@@ -87,15 +88,15 @@ img {
     content: "";
     width: 0;
     height: 2px;
-    background: #6d7f52;
+    background: #453e79;
     position: absolute;
     left: -68px;
     top: 5px;
     transition: all 0.6s ease; }
 .wizard > .steps li.first a {
-  background: #6d7f52; }
+  background: #453e79; }
 .wizard > .steps li.checked a {
-  background: #6d7f52; }
+  background: #453e79; }
   .wizard > .steps li.checked a:after {
     width: 58px; }
 .wizard > .steps li:last-child a {
@@ -136,17 +137,17 @@ h3 {
   font-family: "Muli-SemiBold";
   font-size: 22px;
   color: #453e79;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  padding: 5px 15px;
+  /*text-transform: uppercase;*/
+  /*letter-spacing: 7px;*/
+  padding: 32px 15px;
   display: inline-block;
-  border: 1px solid #dad8e4;
+  /*border: 1px solid #dad8e4;*/
   margin-bottom: 85px; }
 
 p {
   font-family: "Muli-SemiBold";
   font-size: 20px;
-  color: #6d7f52;
+  color: #453e79;
   text-align: center;
   margin-bottom: 26px; }
 
@@ -202,7 +203,7 @@ p {
 
 .form-control {
   height: 37px;
-  border: none;
+  /*border: none;*/
   padding: 10px;
   /*border-bottom: 2px solid #e6e6e6;*/
   width: 100%;
@@ -248,7 +249,7 @@ textarea.form-control {
     color: #666;
     cursor: pointer;
     position: relative;
-    padding-left: 28px; }
+    padding-left: 40px; }
     .actions li a:before {
       content: '\f301';
       position: absolute;
@@ -258,8 +259,9 @@ textarea.form-control {
     .actions li a:hover {
       background: #cfc7b8; }
   .actions li:first-child a {
-    width: 144px;
-    padding-left: 48px; }
+      width: 109px;
+      padding-left: 27px;
+  }
     .actions li:first-child a:before {
       content: '\f2ff';
       position: absolute;
@@ -270,10 +272,10 @@ textarea.form-control {
     margin-left: 20px; }
   .actions li:last-child a {
     width: 124px;
-    background: #6d7f52;
+    background: #453e79;
     color: #fff; }
     .actions li:last-child a:hover {
-      background: #849963; }
+      background: #453e79; }
     .actions li:last-child a:before {
       content: '\f26b';
       position: absolute;
@@ -284,10 +286,10 @@ textarea.form-control {
     opacity: 0;
     transition: all 1s; }
   .actions li[aria-disabled="false"] ~ li a {
-    background: #6d7f52;
+    background: #453e79;
     color: #fff; }
     .actions li[aria-disabled="false"] ~ li a:hover {
-      background: #849963; }
+      background: #453e79; }
 
 .checkbox-tick label {
   cursor: pointer;
@@ -334,9 +336,10 @@ textarea.form-control {
     color: #999;
     font-size: 13px;
     line-height: 1.9;
+      padding-left: 33px;
     transform: translateY(-5px); }
     .checkbox-circle label a {
-      color: #6d7f52; }
+      color: #453e79; }
       .checkbox-circle label a:hover {
         color: #89b843; }
   .checkbox-circle input {
@@ -474,4 +477,157 @@ textarea.form-control {
 .container__nav > small {
     color: #777;
     margin-right: 1rem;
+}
+/****/
+/*=============================================================
+    Authour URL: www.designbootstrap.com
+
+    http://www.designbootstrap.com/
+
+    License: MIT
+========================================================  */
+
+/*============================================================
+BACKGROUND COLORS
+============================================================*/
+.db-bk-color-one {
+    background-color: #f55039;
+}
+
+.db-bk-color-two {
+    background-color: #46A6F7;
+}
+
+.db-bk-color-three {
+    background-color: #47887E;
+}
+
+.db-bk-color-six {
+    background-color: #F59B24;
+}
+/*============================================================
+PRICING STYLES
+==========================================================*/
+.db-padding-btm {
+    padding-bottom: 50px;
+}
+.db-button-color-square {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.50);
+    border: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+.db-button-color-square:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.50);
+    border: none;
+}
+
+
+.db-pricing-eleven {
+    /*margin-bottom: 30px;*/
+    /*margin-top: 50px;*/
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    color: #fff;
+    line-height: 30px;
+}
+
+.db-pricing-eleven ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    padding-left: 0px;
+}
+
+.db-pricing-eleven ul li {
+    padding-top: 8px;
+    /*padding-bottom: 20px;*/
+    cursor: pointer;
+}
+
+.db-pricing-eleven ul li i {
+    margin-right: 5px;
+}
+
+
+.db-pricing-eleven .price {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px 20px 20px;
+    font-size: 13pt;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+
+.db-pricing-eleven .price small {
+    color: #B8B8B8;
+    display: block;
+    font-size: 12px;
+    margin-top: 22px;
+}
+
+.db-pricing-eleven .type {
+    background-color: #52E89E;
+    padding: 50px 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.db-pricing-eleven .pricing-footer {
+    padding: 20px;
+}
+
+.db-attached > .col-lg-4,
+.db-attached > .col-lg-3,
+.db-attached > .col-md-4,
+.db-attached > .col-md-3,
+.db-attached > .col-sm-4,
+.db-attached > .col-sm-3 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/****/
+
+.form-control.focus {
+    background-color: #f4f1eb;
+    border-color: #f4f1eb;
+    color: #f4f1eb;
+    transition: color 0.2s ease;
+}
+.form-control {
+    background-color: #F8F6F2 !important;
+    border-color: #F8F6F2;
+    color: #F8F6F2;
+    font-size: 1.15rem;
+    transition: color 0.2s ease;
+    display: block;
+    width: 100%;
+    padding: 0.775rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #716D66;
+    background-color: #ffffff;
+     background-clip: padding-box;
+     border: 1px solid #EFE9E1;
+    appearance: none;
+}
+.actions li a {
+    padding: 10px;
+    border: none;
+    display: inline-flex;
+    height: 35px;
+    width: 103px;
+    align-items: center;
+    background: #e9e0cf;
+    font-family: "Muli-SemiBold";
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    padding-left: 26px;
 }

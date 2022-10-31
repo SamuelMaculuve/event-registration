@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-Author: Keenthemes
+Author: Samuel Maculuve
 Product Name: Good - Bootstrap 5 HTML Asp.Net Core, Blazor, Django & Flask Admin Dashboard Template
 Purchase: https://themes.getbootstrap.com/product/good-bootstrap-5-admin-dashboard-template
 Website: http://www.keenthemes.com
@@ -24,21 +24,19 @@ License: For each use you must have a valid license purchased only from above li
     <meta property="og:url" content="https://themes.getbootstrap.com/product/good-bootstrap-5-admin-dashboard-template" />
     <meta property="og:site_name" content="Keenthemes | Good" />
     <link rel="canonical" href="https://preview.keenthemes.com/good" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset('assets/media/logos/favicon.ico') }}" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used by this page)-->
-    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/custom/vis-timeline/vis-timeline.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
-    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
-    <!--Begin::Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src= '../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5FS8GGP');</script>
-    <!--End::Google Tag Manager -->
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -70,9 +68,9 @@ License: For each use you must have a valid license purchased only from above li
                 <!--end::Mobile menu toggle-->
                 <!--begin::Mobile logo-->
                 <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                    <a href="index.html" class="d-lg-none">
-                        <img alt="Logo" src="assets/media/logos/default.svg" class="theme-light-show h-30px" />
-                        <img alt="Logo" src="assets/media/logos/default-dark.svg" class="theme-dark-show h-30px" />
+                    <a href="/" class="d-lg-none">
+                        <img alt="Logo" src="{{ asset('assets/media/logos/believer.png') }}" class="theme-light-show h-30px" />
+                        <img alt="Logo" src="{{ asset('assets/media/logos/believer.png') }}" class="theme-dark-show h-30px" />
                     </a>
                 </div>
                 <!--end::Mobile logo-->
@@ -83,7 +81,7 @@ License: For each use you must have a valid license purchased only from above li
                         <!--begin::Title-->
                         <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Dashbaord
                             <!--begin::Description-->
-                            <span class="page-desc text-gray-400 fs-7 fw-semibold pt-1">You’ve got 24 New Sales</span>
+                            <span class="page-desc text-gray-400 fs-7 fw-semibold pt-1">Bem vindo {{ Auth::user()->name }}</span>
                             <!--end::Description--></h1>
                         <!--end::Title-->
                     </div>
@@ -91,27 +89,7 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Navbar-->
                     <div class="app-navbar align-items-center flex-shrink-0">
                         <!--begin::Search-->
-                        <div class="app-navbar-item ms-2 ms-lg-4">
-                            <!--begin::Search-->
-                            <div id="kt_header_search" class="header-search d-flex align-items-center w-lg-250px" data-kt-search-keypress="true" data-kt-search-min-length="2" data-kt-search-enter="enter" data-kt-search-layout="menu" data-kt-search-responsive="lg" data-kt-menu-trigger="auto" data-kt-menu-permanent="true" data-kt-menu-placement="bottom-end" data-kt-menu-attach="parent">
-                                <!--begin::Tablet and mobile search toggle-->
-                                <div data-kt-search-element="toggle" class="d-flex d-lg-none align-items-center">
-                                    <div class="btn btn-custom btn-outline btn-icon btn-icon-gray-700 btn-active-icon-primary">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen021.svg-->
-                                        <span class="svg-icon svg-icon-1">
-													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor" />
-														<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor" />
-													</svg>
-												</span>
-                                        <!--end::Svg Icon-->
-                                    </div>
-                                </div>
-                                <!--end::Tablet and mobile search toggle-->
 
-                            </div>
-                            <!--end::Search-->
-                        </div>
                         <!--end::Search-->
                         <!--begin::Notifications-->
                         <div class="app-navbar-item ms-2 ms-lg-4">
@@ -244,9 +222,9 @@ License: For each use you must have a valid license purchased only from above li
                 <!--begin::Logo-->
                 <div class="app-sidebar-logo d-none d-lg-flex flex-stack flex-shrink-0 px-8" id="kt_app_sidebar_logo">
                     <!--begin::Logo image-->
-                    <a href="index.html">
-                        <img alt="Logo" src="assets/media/logos/default.svg" class="theme-light-show h-25px" />
-                        <img alt="Logo" src="assets/media/logos/default-dark.svg" class="theme-dark-show h-25px" />
+                    <a href="/">
+                        <img alt="Logo" src="{{ asset('assets/media/logos/believer.png') }}" class="theme-light-show h-25px" />
+                        <img alt="Logo" src="{{ asset('assets/media/logos/believer.png') }}" class="theme-dark-show h-25px" />
                     </a>
                     <!--end::Logo image-->
                     <!--begin::Menu wrapper-->
@@ -373,11 +351,22 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link active" href="index.html">
+                                    <a class="menu-link active" href="{{ route('eventRegistration.index') }}">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-                                        <span class="menu-title">Default</span>
+                                        <span class="menu-title">Registros</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{ route('users.index') }}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+                                        <span class="menu-title">Users</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -389,11 +378,12 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-                                        <span class="menu-title">Projects</span>
+                                        <span class="menu-title">Minha conta</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
+
 
                             </div>
                             <!--end:Menu sub-->
@@ -577,17 +567,21 @@ License: For each use you must have a valid license purchased only from above li
                         <!--begin::Info-->
                         <div class="me-2">
                             <!--begin::Username-->
-                            <a href="#" class="app-sidebar-username text-gray-800 text-hover-primary fs-6 fw-semibold lh-0">Paul Melone</a>
+                            <a href="#" class="app-sidebar-username text-gray-800 text-hover-primary fs-6 fw-semibold lh-0">{{ Auth::user()->name }}</a>
                             <!--end::Username-->
                             <!--begin::Description-->
-                            <span class="app-sidebar-deckription text-gray-400 fw-semibold d-block fs-8">Python Dev</span>
+                            <span class="app-sidebar-deckription text-gray-400 fw-semibold d-block fs-8">Admin</span>
                             <!--end::Description-->
                         </div>
                         <!--end::Info-->
                     </div>
                     <!--end::User avatar-->
                     <!--begin::Action-->
-                    <a href="authentication/sign-in/basic.html" class="btn btn-icon btn-active-color-primary btn-icon-custom-color me-n4" data-bs-toggle="tooltip" title="End session and singout">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                       class="btn btn-icon btn-active-color-primary btn-icon-custom-color me-n4"
+                       data-bs-toggle="tooltip" title="Encerrar sessão e Sair">
+
                         <!--begin::Svg Icon | path: icons/duotune/arrows/arr076.svg-->
                         <span class="svg-icon svg-icon-2 svg-icon-gray-400">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -598,6 +592,9 @@ License: For each use you must have a valid license purchased only from above li
 								</span>
                         <!--end::Svg Icon-->
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                     <!--end::Action-->
                 </div>
                 <!--end::User-->
@@ -643,31 +640,30 @@ License: For each use you must have a valid license purchased only from above li
 </div>
 <!--end::App-->
 
-<script>var hostUrl = "assets/index.html";</script>
 <!--begin::Global Javascript Bundle(used by all pages)-->
-<script src="assets/plugins/global/plugins.bundle.js"></script>
-<script src="assets/js/scripts.bundle.js"></script>
+<script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
 <!--end::Global Javascript Bundle-->
 <!--begin::Vendors Javascript(used by this page)-->
-<script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
-<script src="assets/plugins/custom/vis-timeline/vis-timeline.bundle.js"></script>
+<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+<script src="{{ asset('assets/plugins/custom/vis-timeline/vis-timeline.bundle.js') }}"></script>
 <!--end::Vendors Javascript-->
 <!--begin::Custom Javascript(used by this page)-->
-<script src="assets/js/widgets.bundle.js"></script>
-<script src="assets/js/custom/widgets.js"></script>
-<script src="assets/js/custom/apps/chat/chat.js"></script>
-<script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/type.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/budget.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/settings.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/team.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/targets.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/files.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/complete.js"></script>
-<script src="assets/js/custom/utilities/modals/create-project/main.js"></script>
-<script src="assets/js/custom/utilities/modals/create-app.js"></script>
-<script src="assets/js/custom/utilities/modals/create-campaign.js"></script>
-<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+<script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/custom/widgets.js ') }}"></script>
+<script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/type.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/budget.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/settings.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/team.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/targets.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/files.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/complete.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-project/main.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-app.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
 </body>

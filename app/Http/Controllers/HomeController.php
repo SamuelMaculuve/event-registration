@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\eventRegistration;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+//        $count = eventRegistration()->distinct('date')
+//            ->count();
+        $count = 2;
+
+        return view('home',compact('count'));
     }
 }

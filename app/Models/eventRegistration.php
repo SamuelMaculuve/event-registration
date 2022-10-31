@@ -11,17 +11,17 @@ class eventRegistration extends Model
 
     protected $guarded = [];
 
-    public function eventCompany()
+    public function eventcompany()
     {
         return $this->hasOne(eventCompany::class);
     }
 
-    public function eventRepresentative()
+    public function eventrepresentative()
     {
         return $this->hasOne(eventRepresentative::class);
     }
 
-    public function socialNetworks()
+    public function socialnetworks()
     {
         return $this->hasOne(socialNetworks::class);
     }

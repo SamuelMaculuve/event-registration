@@ -11,7 +11,7 @@ class eventCompany extends Model
 
     protected $guarded = [];
 
-    public function eventRegistration()
+    public function eventregistration()
     {
         return $this->belongsTo(eventRegistration::class);
     }

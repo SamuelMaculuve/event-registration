@@ -22,9 +22,10 @@ class CreateEventRegistrationsTable extends Migration
             $table->string('province');
             $table->string('location');
             $table->string('action_time_market');
-            $table->string('expectations');
-            $table->string('lot');
-            $table->boolean('terms_conditions');
+            $table->string('expectations')->nullable();;
+            $table->string('lot')->nullable();;
+            $table->boolean('terms_conditions')->nullable();
+            $table->boolean('payment_state')->nullable();;
             $table->timestamps();
         });
     }
