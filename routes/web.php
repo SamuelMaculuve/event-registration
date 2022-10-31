@@ -46,3 +46,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', '\App\Http\Controllers\RoleController');
     Route::resource('users', '\App\Http\Controllers\UserController');
 });
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Mail from Teste',
+        'body' => 'This is for testing email using smtp'
+    ];
+
+    \Mail::to('samuelmaculuve14@gmail.com')->send(new \App\Mail\MyTestMail($details));
+
+    dd("Email is Sent.");
+});
