@@ -143,9 +143,9 @@ class EventRegistrationController extends Controller
 
         view()->share('registration',$data);
 
-        $pdf = PDF::loadView('registrationpdf');
+        $pdf = PDF::loadView('registrationpdf')->setPaper('a4', 'landscape');
 
-        return $pdf->download('registrationpdf.pdf');
+        return $pdf->download('registrationCompanys.pdf');
     }
 
 
