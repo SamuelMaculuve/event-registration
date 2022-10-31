@@ -7,6 +7,7 @@ use App\Models\eventRegistration;
 use App\Models\eventRepresentative;
 use App\Models\socialNetworks;
 use Illuminate\Http\Request;
+use PDF;
 
 class EventRegistrationController extends Controller
 {
@@ -135,5 +136,16 @@ class EventRegistrationController extends Controller
 
         return redirect()->route('dashboard.index')
             ->with('message','Registro apagado com sucesso.');
+    }
+    public function generatePDF()
+    {
+        $data = [
+            'title' => 'Welcome to ItSolutionStuff.com',
+            'date' => date('m/d/Y')
+        ];
+
+        $pdf = PDF::loadView('myPDF', $data);
+
+        return $pdf->download('registrationpdf.pdf');
     }
 }

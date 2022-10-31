@@ -40,7 +40,7 @@ Auth::routes();
 
 Route::post('/approve', [App\Http\Controllers\EventRegistrationController::class, 'approveCompany'])->name('approve');
 Route::resource('/eventRegistration','\App\Http\Controllers\EventRegistrationController');
-
+Route::get('generate-pdf', [App\Http\Controllers\EventRegistrationController::class, 'generatePDF'])->name('generate-pdf');
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('roles', '\App\Http\Controllers\RoleController');
