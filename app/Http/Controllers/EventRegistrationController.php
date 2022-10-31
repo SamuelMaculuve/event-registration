@@ -139,13 +139,14 @@ class EventRegistrationController extends Controller
     }
     public function generatePDF()
     {
-        $data = [
-            'title' => 'Welcome to ItSolutionStuff.com',
-            'date' => date('m/d/Y')
-        ];
+        $data = eventRegistration::all();
 
-        $pdf = PDF::loadView('registrationpdf', $data);
+        view()->share('registration',$data);
+
+        $pdf = PDF::loadView('registrationpdf');
 
         return $pdf->download('registrationpdf.pdf');
     }
+
+
 }
