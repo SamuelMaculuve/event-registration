@@ -6,27 +6,28 @@ use Livewire\Component;
 
 class EventRegistration extends Component
 {
-    public $school1 = "";
+    public $estado = "";
+    public $company_name = "";
     public $filtro = [];
-    public $eRegistions;
+    public $factura = "";
+    public $mes = "";
+    public $nome = "";
 
     public function render()
     {
-        if (strlen($this->school1) > 1 ) {
 
-            $d = \App\Models\eventRegistration::where($this->filtro)
-                ->pluck("id")->toArray();
+        $d  = \App\Models\eventRegistration::
+            where('payment_state','=',0)
+            ->where($this->filtro)
+            ->pluck("id")->toArray();
+//        dd($d);
+        $dados['eventRegistions'] =
+            \App\Models\eventRegistration::whereIn("id",array(2))
+                ->orderby('id','asc')->paginate(25);
 
-            $dados['schools'] = \App\Models\eventRegistration::whereIn("id", $d)
-                ->orderby("description", "asc")
-                ->get();
+//        dd($dados);
 
-        }else {
-            $this->eRegistions = \App\Models\eventRegistration::all();
-        }
-
-
-        return view('livewire.event-registration');
+        return view('livewire.event-registration',$dados);
     }
     public function updatingSearch()
     {
@@ -35,10 +36,11 @@ class EventRegistration extends Component
 
     public function setFiltros()
     {
+
         $lista = [];
 
-        if($this->school1 != ''){
-            array_push($lista,["schools.name","like",'%'.$this->school1.'%']);
+        if($this->company_name != ''){
+            array_push($lista,["event_registrations.company_name","like",'%'.$this->company_name.'%']);
         }
 
         $this->filtro = $lista;
