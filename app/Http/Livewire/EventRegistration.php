@@ -22,7 +22,7 @@ class EventRegistration extends Component
             ->pluck("id")->toArray();
 //        dd($d);
         $dados['eventRegistions'] =
-            \App\Models\eventRegistration::whereIn("id",array(2))
+            \App\Models\eventRegistration::whereIn("id",$d)
                 ->orderby('id','asc')->paginate(25);
 
 //        dd($dados);
