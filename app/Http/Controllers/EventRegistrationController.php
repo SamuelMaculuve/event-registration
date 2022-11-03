@@ -14,7 +14,7 @@ class EventRegistrationController extends Controller
 
     public function index()
     {
-        $eventRegistions = eventRegistration::all();
+        $eventRegistions = eventRegistration::orderBy('created_at', 'desc')->get();
 
         return view('dashboard.index',compact('eventRegistions'));
     }

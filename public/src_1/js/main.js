@@ -123,7 +123,7 @@ function ValidatePetSelection()
     }
     if(numberOfCheckedItems > 1)
     {
-        alert("Você não pode selecionar mais de dois animais de estimação favoritos!\n");
+        alert("Você não pode selecionar mais de dois pacotes!\n");
         return false;
     }
 }

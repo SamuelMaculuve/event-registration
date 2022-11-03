@@ -170,7 +170,7 @@
                                 </div>
                             </th>
                             <th class="min-w-125px">Empresa</th>
-                            <th class="min-w-125px">Estado</th>
+                            <th class="min-w-125px">Tempo de atuação</th>
                             <th class="min-w-125px">Nome do representante</th>
                             <th class="min-w-125px">Área de Actuação</th>
                             <th class="text-end min-w-100px">Actions</th>
@@ -203,19 +203,22 @@
                                     <!--end::Avatar-->
                                     <!--begin::User details-->
                                     <div class="d-flex flex-column">
-                                        <a href="#" class="text-gray-800 text-hover-primary mb-1">{{ $eRegistion->company_name }}</a>
-                                        <span class="badge badge-light fw-bold">{{$eRegistion->area_operation}}</span>
+                                        <a href="#" class="text-gray-800 text-hover-primary mb-1">{{ $eRegistion->company_name ?? ''}}</a>
+                                        <span class="badge badge-light fw-bold">{{$eRegistion->area_operation ?? ''}}</span>
                                     </div>
                                     <!--begin::User details-->
                                 </td>
 
                                 <td>
-                                    <div class="badge badge-light fw-bold">Em Analise</div>
+                                    <div class="badge badge-light fw-bold">
+                                        {{ $eRegistion->action_time_market ?? '' }}
+
+                                    </div>
                                 </td>
                                 <!--end::Last login=-->
                                 <!--begin::Two step=-->
-                                <td>werwerweew</td>
-                                <td>werwerweew</td>
+                                <td>{{ $eRegistion->eventrepresentative->full_name ?? ''}}</td>
+                                <td>{{ $eRegistion->area_operation ?? '' }}</td>
                                 <!--end::Two step=-->
                                 <!--begin::Joined-->
                                 <!--begin::Joined-->
@@ -237,9 +240,9 @@
                                         </div>
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-users-table-filter="delete_row">Delete</a>
-                                        </div>
+{{--                                        <div class="menu-item px-3">--}}
+{{--                                            <a href="#" class="menu-link px-3" data-kt-users-table-filter="delete_row">Delete</a>--}}
+{{--                                        </div>--}}
                                         <!--end::Menu item-->
                                     </div>
                                     <!--end::Menu-->
