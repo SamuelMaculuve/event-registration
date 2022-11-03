@@ -14,7 +14,9 @@ class EventRegistrationController extends Controller
 
     public function index()
     {
-        return view('dashboard.index');
+        $eventRegistions = eventRegistration::all();
+
+        return view('dashboard.index',compact('eventRegistions'));
     }
 
     public function create()
@@ -177,6 +179,25 @@ class EventRegistrationController extends Controller
         $pdf = PDF::loadView('registrationpdf')->setPaper('a4', 'landscape');
 
         return $pdf->download('registrationCompanys.pdf');
+    }
+    public function searchByNameOrCompany(Request $req)
+    {
+        $eventRegistions = '';
+
+        if($req->companyName != ''){
+            $eventRegistions = eventRegistration::
+            where('company_name', 'like', '%' . $req->companyName . '%')
+                ->get();
+        }
+
+        if($req->companyState != ''){
+            $eventRegistions = eventRegistration::
+                where('payment_state', 'like', '%' . $req->companyState . '%')
+                ->get();
+        }
+
+        return view('dashboard.index',compact('eventRegistions'));
+
     }
 
 
