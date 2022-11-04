@@ -20,7 +20,7 @@
     </section><!-- left-section -->
     <section class="right-section full-height">
 
-        <a class="logo" href="#"><img style="height: 50px;"
+        <a class="logo" href="#"><img style="height: 80px;"
                 src="{{ asset('comming/images/logo-white.png') }}" alt="Logo"></a>
 
         <div class="display-table">

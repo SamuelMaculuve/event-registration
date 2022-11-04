@@ -44,12 +44,6 @@ $(function(){
         },
         onStepChanged: function (event, currentIndex, priorIndex)
         {
-            // Used to skip the "Warning" step if the user is old enough.
-            // if (currentIndex === 2 && Number($("#age-2").val()) >= 18)
-            // {
-            //     $("#wizard").steps("next");
-            // }
-            // Used to skip the "Warning" step if the user is old enough and wants to the previous step.
             if (currentIndex === 2 && priorIndex === 3)
             {
                 $("#wizard").steps("previous");
@@ -127,3 +121,26 @@ function ValidatePetSelection()
         return false;
     }
 }
+//
+const phoneInputField = document.querySelector("#c_cell");
+const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
+const info = document.querySelector(".alert-info");
+
+function process(event) {
+    event.preventDefault();
+    const phoneNumber = phoneInput.getNumber();
+    info.style.display = "";
+    info.innerHTML = `Phone number in E.164 format: <strong>${phoneNumber}</strong>`;
+}
+// Here we select the code that i'll be displayed by default
+window.addEventListener('load', function () {
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        preferredCountries: ["mz", "za", "zw","mg"],
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+})

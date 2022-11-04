@@ -10,11 +10,15 @@
     <link href="{{ asset('comming/04-comming-soon/css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('comming/04-comming-soon/css/responsive.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"> </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> </script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <link rel="stylesheet" href="{{ asset('src_1/css/style.css') }}">
 
 </head>
@@ -38,7 +42,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-6">
-                            <input type="text" placeholder="Nome da Empresa" required
+                            <input type="text" placeholder="Nome da Empresa" required title="Por valor, coloque um valor valido"
                                    class="form-control form-control-lg form-control-solid" name="company_name" id="company_name">
                         </div>
                         <div class="form-group col-sm-6">
@@ -152,8 +156,8 @@
                                    class="form-control form-control-lg form-control-solid" required>
                         </div>
                         <div class="form-group col-sm-6">
-                            <input name="c_cell" type="number" placeholder="Cell" maxlength="9"
-                                   class="form-control form-control-lg form-control-solid" required>
+                            <input name="c_cell" type="number" placeholder="Cell" maxlength="9" title="Por valor, coloque um valor valido"
+                                   class="form-control form-control-lg form-control-solid" id="c_cell" required>
                         </div>
 
                     </div>

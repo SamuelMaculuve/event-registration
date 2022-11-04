@@ -592,7 +592,9 @@ PRICING STYLES
 }
 
 /****/
-
+.form-group {
+    margin-bottom: 2rem;
+}
 .form-control.focus {
     background-color: #f4f1eb;
     border-color: #f4f1eb;
@@ -616,6 +618,7 @@ PRICING STYLES
      background-clip: padding-box;
      border: 1px solid #EFE9E1;
     appearance: none;
+    border-radius: none;
 }
 .actions li a {
     padding: 10px;
