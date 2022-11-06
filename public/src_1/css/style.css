@@ -1,4 +1,5 @@
-
+body{
+    font-family: Inter, Helvetica, "sans-serif";}
 /*============================================================
 PRECOS
 ============================================================*/
@@ -122,7 +123,7 @@ PRECOS FIM
 }
 
 .form-header h3 {
-    font-family: "Muli-SemiBold";
+    /*font-family: "Muli-SemiBold";*/
     font-size: 22pt;
     color: #ffffff;
     padding-top: 20px;
@@ -130,11 +131,10 @@ PRECOS FIM
 }
 
 .actions li a {
-    padding: 10px;
     padding-left: 10px;
     border: none;
     display: inline-flex;
-    padding: 10px;
+    padding: 12px;
     align-items: center;
     background: #e9e0cf;
     font-family: "Muli-SemiBold";

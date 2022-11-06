@@ -24,14 +24,14 @@
 </head>
 <body>
 
-<div class="main-area">
+<div class="main-area" style="height: 120vh;">
 
     <section class="left-section"
              style="background-image: url(comming/images/countdown-4-1000x1000.jpg);width: 30%;">
     </section><!-- left-section -->
-    <section class="right-section full-height mt-5">
+    <section class="right-section full-height mt-5" >
 
-        <div class="wrapper mt-5">
+        <div class="wrapper mt-5" >
             <form action="{{ route('eventRegistration.store') }}" id="wizard" method="POST" class="form-imput-label">
             @csrf
             <!-- SECTION 1 -->
@@ -41,21 +41,23 @@
                         <h3>Informação da Empresa</h3>
                     </div>
                     <div class="row">
-                        <div class="form-group col-sm-6">
+                        <div class="form-group col-sm-12">
                             <input type="text" placeholder="Nome da Empresa" required title="Por valor, coloque um valor valido"
                                    class="form-control form-control-lg form-control-solid" name="company_name" id="company_name">
                         </div>
-                        <div class="form-group col-sm-6">
-                            <input type="text" placeholder="Área de Actuação/Actividade"
-                                   class="form-control form-control-lg form-control-solid" name="area_operation" required>
-                        </div>
+
                     </div>
                     <div class="row">
-                        <div class="form-group col-sm-4">
-                            <input type="number" placeholder="Nuit" id="nuit" maxlength="9" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" name="nuit" required>
+                        <div class="form-group col-sm-6">
+                            <input type="text" placeholder="Área de Actuação/Actividade" title="Por valor, coloque um valor valido"
+                                   class="form-control form-control-lg form-control-solid" name="area_operation" required>
                         </div>
-                        <div class="form-group col-sm-4">
+                        <div class="form-group col-sm-6">
+                            <input type="number" placeholder="Nuit" id="nuit" maxlength="9" title="Por valor, coloque um valor valido"
+                                   class="form-control form-control-lg form-control-solid w-100 " name="nuit" required>
+                        </div>
+
+                        <div class="form-group col-sm-12">
                             <div class="select-wrapper">
                                 <select class="form-control form-control-lg form-control-solid" name="company_type" required>
                                     <option value="0">Selecionar Tipo de empresa</option>
@@ -66,7 +68,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group col-sm-4">
+                        <div class="form-group col-sm-6">
                             <div class="select-wrapper">
                                 <select class="form-control form-control-lg form-control-solid" name="province" required>
                                     <option value="0">Selecionar Provincia</option>
@@ -84,16 +86,18 @@
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="form-group col-sm-6">
-                            <input type="text" placeholder="Localização" required
+                            <input type="text" placeholder="Localização" required title="Por valor, coloque um valor valido"
                                    class="form-control form-control-lg form-control-solid" name="location">
                         </div>
-                        <div class="form-group col-sm-6">
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group col-sm-12">
                             <div >
                                 <select class="form-control form-control-lg form-control-solid" name="action_time_market" required>
-                                    <option value="0">--- Selecionar o Tempo de Actuação no mercado ---</option>
+                                    <option value="0">Selecionar o Tempo de Actuação no mercado ---</option>
                                     <option value="1-3">1-3  anos</option>
                                     <option value="4-7">4-7 anos</option>
                                     <option value="8-9">8-9 anos</option>
@@ -189,12 +193,12 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-4">
-                            <input name="full_name" type="text" placeholder="Nome completo "
+                            <input name="full_name" type="text" placeholder="Nome completo " title="Por valor, coloque um valor valido"
                                    class="form-control form-control-lg form-control-solid" required>
                         </div>
 
                         <div class="form-group col-sm-4">
-                            <input name="role" type="text" placeholder="Cargo/Função"
+                            <input name="role" type="text" placeholder="Cargo/Função" title="Por valor, coloque um valor valido"
                                    class="form-control form-control-lg form-control-solid" required>
                         </div>
                         <div class="form-group col-sm-4">
