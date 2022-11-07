@@ -134,10 +134,10 @@ PRECOS FIM
     padding-left: 10px;
     border: none;
     display: inline-flex;
-    padding: 12px;
+    padding: 15px;
     align-items: center;
-    background: #e9e0cf;
-    font-family: "Muli-SemiBold";
+    background: #ffffff;
+    font-family: Inter, Helvetica, "sans-serif";
     color: #666;
     cursor: pointer;
     position: relative;
@@ -163,7 +163,7 @@ PRECOS FIM
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #e9e0cf;
+    background: #ffffff;
     margin-right: 78px;
     position: relative; }
 .wizard > .steps li a:before {

@@ -26,10 +26,13 @@ a, button{ display: inline-block; text-decoration: none; color: inherit; transit
 
 a:focus{ text-decoration: none; color: #053354;background: #FFF0ED !important; }
 a:hover{
-    text-decoration: none;
+    text-decoration: none;.actions li a
     color: #053354;
     background-color: #FFF0ED !important;
     background: #FFF0ED !important; }
+input:invalid {
+    border: solid red 1px;
+}
 
 /*a:focus, a:active, a:hover,*/
 /*button:focus, button:active, button:hover,*/
@@ -159,7 +162,7 @@ html {
     background: #053354;
     color: #fff; }
 
- .submit-btn:hover{ background: #053354 !important; }
+ .submit-btn:hover{ background: #ffffff !important; color: #053354;}
 
 
 

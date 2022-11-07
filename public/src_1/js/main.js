@@ -1,4 +1,16 @@
+$(".allow-only-number").keypress(function (e) {
+    $(".allow-only-number").attr("min", "10");
+    var valueLength = this.value.length;
+    if (valueLength == 10) {
+        return false;
+    }
+    var kk = e.which;
+    if (kk < 48 || kk > 57)
+        e.preventDefault();
+});
+
 $('#terms_conditions').change(function(){
+
     if(this.checked) {
         $('#finish').next().hide();
     } else {
