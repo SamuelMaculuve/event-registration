@@ -32,35 +32,35 @@ $(function(){
             next: "Próximo",
             previous: "Anterior"
         },
-        onStepChanging: function (event, currentIndex, newIndex)
-        {
-            // Allways allow previous action even if the current form is not valid!
-            if (currentIndex > newIndex)
-            {
-                return true;
-            }
-            // Forbid next action on "Warning" step if the user is to young
-            if (newIndex === 3 && Number($("#nuit").val()) < 18)
-            {
-                return false;
-            }
-            // Needed in some cases if the user went back (clean up)
-            if (currentIndex < newIndex)
-            {
-                // To remove error styles
-                $("#wizard").find(".body:eq(" + newIndex + ") label.error").remove();
-                $("#wizard").find(".body:eq(" + newIndex + ") .error").removeClass("error");
-            }
-            $("#wizard").validate().settings.ignore = ":disabled,:hidden";
-            return $("#wizard").valid();
-        },
-        onStepChanged: function (event, currentIndex, priorIndex)
-        {
-            if (currentIndex === 2 && priorIndex === 3)
-            {
-                $("#wizard").steps("previous");
-            }
-        },
+        // onStepChanging: function (event, currentIndex, newIndex)
+        // {
+        //     // Allways allow previous action even if the current form is not valid!
+        //     if (currentIndex > newIndex)
+        //     {
+        //         return true;
+        //     }
+        //     // Forbid next action on "Warning" step if the user is to young
+        //     if (newIndex === 3 && Number($("#nuit").val()) < 18)
+        //     {
+        //         return false;
+        //     }
+        //     // Needed in some cases if the user went back (clean up)
+        //     if (currentIndex < newIndex)
+        //     {
+        //         // To remove error styles
+        //         $("#wizard").find(".body:eq(" + newIndex + ") label.error").remove();
+        //         $("#wizard").find(".body:eq(" + newIndex + ") .error").removeClass("error");
+        //     }
+        //     $("#wizard").validate().settings.ignore = ":disabled,:hidden";
+        //     return $("#wizard").valid();
+        // },
+        // onStepChanged: function (event, currentIndex, priorIndex)
+        // {
+        //     if (currentIndex === 2 && priorIndex === 3)
+        //     {
+        //         $("#wizard").steps("previous");
+        //     }
+        // },
         onFinished: function (event, currentIndex) {
             // alert("Alhamdulillah, Alkhery Member is already Registered.");
             $("#wizard").submit();
@@ -156,3 +156,38 @@ window.addEventListener('load', function () {
             "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
 })
+
+
+/***/
+function readURL(input) {
+    if (input.files && input.files[0]) {
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            $('.image-upload-wrap').hide();
+
+            $('.file-upload-image').attr('src', e.target.result);
+            $('.file-upload-content').show();
+
+            $('.image-title').html(input.files[0].name);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+    } else {
+        removeUpload();
+    }
+}
+
+function removeUpload() {
+    $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+    $('.file-upload-content').hide();
+    $('.image-upload-wrap').show();
+}
+$('.image-upload-wrap').bind('dragover', function () {
+    $('.image-upload-wrap').addClass('image-dropping');
+});
+$('.image-upload-wrap').bind('dragleave', function () {
+    $('.image-upload-wrap').removeClass('image-dropping');
+});

@@ -25,7 +25,8 @@ class CreateEventRegistrationsTable extends Migration
             $table->string('expectations')->nullable();;
             $table->string('lot')->nullable();;
             $table->boolean('terms_conditions')->nullable();
-            $table->boolean('payment_state')->nullable();;
+            $table->boolean('payment_state')->nullable();
+            $table->string('image_comprovation');
             $table->timestamps();
         });
     }

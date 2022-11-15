@@ -56,11 +56,11 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('send-mail', function () {
 
     $details = [
-        'title' => 'Mail from Teste',
-        'body' => 'This is for testing email using smtp'
+        'title' => 'Cadastro onfirmação de cadastro',
+        'body' => 'Confirmação do cadastro do evento Business Picth PMEs-B2B 2022'
     ];
 
-    \Mail::to('samuelmaculuve14@gmail.com')->send(new \App\Mail\MyTestMail($details));
+    \Mail::to('samuelmaculuve8@gmail.com')->send(new \App\Mail\MyTestMail($details));
 
     dd("Email is Sent.");
 });

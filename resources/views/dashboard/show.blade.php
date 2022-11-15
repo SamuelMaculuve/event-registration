@@ -244,6 +244,23 @@
                             <!--begin::Section-->
                             <div class="mb-7">
                                 <!--begin::Title-->
+                                <h5 class="mb-3"> Comprovativo de pagamento </h5>
+                                <!--end::Title-->
+                                <!--begin::Details-->
+                                <div class="mb-0">
+                                    <!--begin::Plan-->
+                                    <span class="badge badge-light-info me-2">Comprovativo :</span>
+                                    <!--end::Plan-->
+                                    <!--begin::Price-->
+
+                                    <span class="fw-semibold text-gray-600">
+                                       <a href="{{ asset('comprovations/'.$eventRegistration->image_comprovation ?? 'Item_sem_imagem.png') }}">
+                                         <img alt="Comprovativo" src="{{ asset('comprovations/'.$eventRegistration->image_comprovation ?? 'Item_sem_imagem.png') }}"
+                                              width=150" height="70">
+                                      </a></span>
+                                    <!--end::Price-->
+                                    <div class="separator separator-dashed mb-7"></div>
+                                </div>
                                 <h5 class="mb-3"> Contactos da Empresa </h5>
                                 <!--end::Title-->
                                 <!--begin::Details-->
@@ -308,6 +325,7 @@
 
                             </div>
                             <!--end::Section-->
+
                             <!--begin::Seperator-->
                             <div class="separator separator-dashed mb-7"></div>
                             <!--end::Seperator-->

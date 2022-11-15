@@ -32,7 +32,7 @@
     <section class="right-section full-height mt-5" >
 
         <div class="wrapper mt-5" >
-            <form action="{{ route('eventRegistration.store') }}" id="wizard" method="POST" class="form-imput-label">
+            <form enctype="multipart/form-data" action="{{ route('eventRegistration.store') }}" id="wizard" method="POST" class="form-imput-label">
             @csrf
             <!-- SECTION 1 -->
                 <h2></h2>
@@ -350,7 +350,34 @@
                     </div>
 
                 </section>
+                <h2></h2>
+                <section>
+                    <div class="form-header">
+                        <h3>Queira por favor efectuar o pagamento.</h3>
+                    </div>
+                    <div class="form-row db-padding-btm db-attached">
+                        <div class="wrapper mt-5" >
+                            <div class="file-upload">
+                                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Adiconar Imagem</button>
 
+                                <div class="image-upload-wrap">
+                                    <input name="image_comp" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Arraste e solte um arquivo ou selecione adicionar imagem</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content">
+                                    <img class="file-upload-image" src="#" alt="your image" />
+                                    <div class="image-title-wrap">
+                                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
                 <!-- SECTION 7 -->
                 <h2></h2>
                 <section>

@@ -71,13 +71,13 @@
         <div class="logo">
             <img src="{{ asset('comming/images/logo-white.png') }}" alt="">
         </div>
-        <h1>Obrigada!</h1>
+        <h1>Obrigada (a)!</h1>
     </div>
     <div class="_body">
         <div class="_box">
             <h2>
-                <strong>Por favor verifique seu email
-                </strong> para obter mais instruções sobre como concluir a configuração da sua conta.
+                <strong>Cadastro com sucesso para o evento
+                </strong> Business Picth PMEs-B2B 2022
             </h2>
             <p>
                 Muito obrigado por preencher isso. Significa muito para nós, assim como você! Nós realmente apreciamos você nos dando um momento do seu tempo hoje. Obrigado por ser você.

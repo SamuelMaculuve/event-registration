@@ -26,6 +26,15 @@ class EventRegistrationController extends Controller
 
     public function store(Request $request)
     {
+//        $validatedData = $request->validate([
+//            'image_comp' => 'required|image|mimes:jpg,png,jpeg,gif,svg',
+//        ]);
+
+//        $path = $request->file('image_comp')->store('public/comprovations');
+
+        $imageName = time().'.'.$request->image_comp->extension();
+
+        $request->image_comp->move(public_path('comprovations'), $imageName);
 
         $eRegistion = new eventRegistration();
         $eCompany = new eventCompany();
@@ -75,6 +84,7 @@ class EventRegistrationController extends Controller
         $eRegistion->expectations = $request->expectations;
         $eRegistion->lot = $request->lot;
         $eRegistion->terms_conditions = true;
+        $eRegistion->image_comprovation = $imageName;
         $eRegistion->save();
 
         $socialNetworks->social_instagram = $request->social_instagram;
@@ -103,7 +113,16 @@ class EventRegistrationController extends Controller
         $eCompany->event_registration_id = $eRegistion->id;
         $eCompany->save();
 
+
+        $details = [
+            'title' => 'Cadastro onfirmação de cadastro',
+            'body' => 'Confirmação do cadastro do evento Business Picth PMEs-B2B 2022'
+        ];
+
+        \Mail::to($request->r_email)->send(new \App\Mail\MyTestMail($details));
+
         return redirect('/successful');
+
     }
 
     public function show(eventRegistration $eventRegistration)
