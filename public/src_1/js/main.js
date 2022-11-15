@@ -32,35 +32,35 @@ $(function(){
             next: "Próximo",
             previous: "Anterior"
         },
-        // onStepChanging: function (event, currentIndex, newIndex)
-        // {
-        //     // Allways allow previous action even if the current form is not valid!
-        //     if (currentIndex > newIndex)
-        //     {
-        //         return true;
-        //     }
-        //     // Forbid next action on "Warning" step if the user is to young
-        //     if (newIndex === 3 && Number($("#nuit").val()) < 18)
-        //     {
-        //         return false;
-        //     }
-        //     // Needed in some cases if the user went back (clean up)
-        //     if (currentIndex < newIndex)
-        //     {
-        //         // To remove error styles
-        //         $("#wizard").find(".body:eq(" + newIndex + ") label.error").remove();
-        //         $("#wizard").find(".body:eq(" + newIndex + ") .error").removeClass("error");
-        //     }
-        //     $("#wizard").validate().settings.ignore = ":disabled,:hidden";
-        //     return $("#wizard").valid();
-        // },
-        // onStepChanged: function (event, currentIndex, priorIndex)
-        // {
-        //     if (currentIndex === 2 && priorIndex === 3)
-        //     {
-        //         $("#wizard").steps("previous");
-        //     }
-        // },
+        onStepChanging: function (event, currentIndex, newIndex)
+        {
+            // Allways allow previous action even if the current form is not valid!
+            if (currentIndex > newIndex)
+            {
+                return true;
+            }
+            // Forbid next action on "Warning" step if the user is to young
+            if (newIndex === 3 && Number($("#nuit").val()) < 18)
+            {
+                return false;
+            }
+            // Needed in some cases if the user went back (clean up)
+            if (currentIndex < newIndex)
+            {
+                // To remove error styles
+                $("#wizard").find(".body:eq(" + newIndex + ") label.error").remove();
+                $("#wizard").find(".body:eq(" + newIndex + ") .error").removeClass("error");
+            }
+            $("#wizard").validate().settings.ignore = ":disabled,:hidden";
+            return $("#wizard").valid();
+        },
+        onStepChanged: function (event, currentIndex, priorIndex)
+        {
+            if (currentIndex === 2 && priorIndex === 3)
+            {
+                $("#wizard").steps("previous");
+            }
+        },
         onFinished: function (event, currentIndex) {
             // alert("Alhamdulillah, Alkhery Member is already Registered.");
             $("#wizard").submit();
