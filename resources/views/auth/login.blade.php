@@ -7,7 +7,7 @@
         <!--begin::Heading-->
         <div class="text-center mb-10">
             <!--begin::Title-->
-            <h1 class="text-dark mb-3">Sign In to Good</h1>
+            <h1 class="text-dark mb-3">Login no believer dashboard</h1>
             <!--end::Title-->
 
         </div>

@@ -20,14 +20,14 @@
     </section><!-- left-section -->
     <section class="right-section full-height">
 
-        <a class="logo" href="#"><img style="height: 50px;"
+        <a class="logo" href="#"><img style="height: 80px;"
                 src="{{ asset('comming/images/logo-white.png') }}" alt="Logo"></a>
 
         <div class="display-table">
             <div class="display-table-cell">
                 <div class="main-content">
                     <h1 class="title"><b>2ª EDIÇÃO BUSINESS PITCH- B2B MAPUTO</b></h1>
-                    <p class="desc">O pitch é uma apresentação sumária de 3 a 5 minutos com objectivo de despertar o interesse
+                    <p class="desc" style="padding-top: 7px;padding-bottom: 7px;">O pitch é uma apresentação sumária de 3 a 5 minutos com objectivo de despertar o interesse
                         da outra parte (cliente/parceiro) pelo seu negócio. Assim, deve conter apenas as informações
                         essenciais e diferenciadas.</p>
 
@@ -38,7 +38,7 @@
 
         <ul class="footer-icons">
             <li>Sigam-nos  : </li>
-            <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+            <li><a href="#" ><i class="ion-social-facebook"></i></a></li>
             <li><a href="#"><i class="ion-social-twitter"></i></a></li>
             <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
         </ul>

@@ -25,16 +25,15 @@
                 <!--begin::Header-->
                 <div class="d-flex flex-row-fluid flex-center flex-column text-center p-5 p-lg-20">
                     <!--begin::Logo-->
-                    <a href="../../index.html" class="py-9 pt-lg-20">
+                    <a href="/" class="py-9 pt-lg-20">
                         <img alt="Logo" src="{{ asset('comming/images/logo-white.png') }}" class="h-35px h-lg-50" />
                     </a>
                     <!--end::Logo-->
                     <!--begin::Title-->
-                    <h1 class="d-none d-lg-block fw-bold text-white fs-2qx pb-5 pb-md-10">Welcome to Good</h1>
+                    <h1 class="d-none d-lg-block fw-bold text-white fs-2qx pb-5 pb-md-10">Login no believer dashboard</h1>
                     <!--end::Title-->
                     <!--begin::Description-->
-                    <p class="d-none d-lg-block fw-semibold fs-2 text-white">Plan your blog post by choosing a topic creating
-                        <br />an outline and checking facts</p>
+                    <p class="d-none d-lg-block fw-semibold fs-2 text-white"></p>
                     <!--end::Description-->
                 </div>
                 <!--end::Header-->

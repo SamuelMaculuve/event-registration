@@ -10,7 +10,7 @@
                 <!--begin::Row-->
                 <div class="row g-5 g-xxl-10">
                     <!--begin::Col-->
-                    <div class="col-xl-5 col-xxl-4 mb-xl-5 mb-xxl-10">
+                    <div class="col-xl-7 col-xxl-8 mb-5 mb-xxl-10">
                         <!--begin::Card widget 4-->
                         <div class="card card-flush h-xl-100">
                             <!--begin::Header-->
@@ -21,7 +21,7 @@
                                     <div class="d-flex align-items-center">
 
                                         <!--begin::Amount-->
-                                        <span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">{{ $count }}</span>
+                                        <span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">{{ $count ?? ''}}</span>
                                         <!--end::Amount-->
                                         <!--begin::Badge-->
                                         <span class="badge badge-light-success fs-base">
@@ -32,12 +32,12 @@
 																	<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
 																</svg>
 															</span>
-                                            <!--end::Svg Icon-->2.2%</span>
+                                            <!--end::Svg Icon-->{{ $count/100 ?? ''}}</span>
                                         <!--end::Badge-->
                                     </div>
                                     <!--end::Info-->
                                     <!--begin::Subtitle-->
-                                    <span class="text-gray-400 pt-1 fw-semibold fs-6">Expected Earnings</span>
+                                    <span class="text-gray-400 pt-1 fw-semibold fs-6">Empresas Registradas</span>
                                     <!--end::Subtitle-->
                                 </div>
                                 <!--end::Title-->
@@ -58,10 +58,10 @@
                                         <div class="bullet w-8px h-6px rounded-2 bg-danger me-3"></div>
                                         <!--end::Bullet-->
                                         <!--begin::Label-->
-                                        <div class="text-gray-500 flex-grow-1 me-4">Shoes</div>
+                                        <div class="text-gray-500 flex-grow-1 me-4">Valor de Empresas Aprovadas</div>
                                         <!--end::Label-->
                                         <!--begin::Stats-->
-                                        <div class="fw-bolder text-gray-700 text-xxl-end">$7,660</div>
+                                        <div class="fw-bolder text-gray-700 text-xxl-end">{{ $aprovadas ?? '' }}</div>
                                         <!--end::Stats-->
                                     </div>
                                     <!--end::Label-->
@@ -71,10 +71,10 @@
                                         <div class="bullet w-8px h-6px rounded-2 bg-primary me-3"></div>
                                         <!--end::Bullet-->
                                         <!--begin::Label-->
-                                        <div class="text-gray-500 flex-grow-1 me-4">Gaming</div>
+                                        <div class="text-gray-500 flex-grow-1 me-4">Valor de Empresas Pedentes</div>
                                         <!--end::Label-->
                                         <!--begin::Stats-->
-                                        <div class="fw-bolder text-gray-700 text-xxl-end">$2,820</div>
+                                        <div class="fw-bolder text-gray-700 text-xxl-end">{{ $notAprovado ?? '' }}</div>
                                         <!--end::Stats-->
                                     </div>
                                     <!--end::Label-->
@@ -84,10 +84,10 @@
                                         <div class="bullet w-8px h-6px rounded-2 me-3" style="background-color: #E4E6EF"></div>
                                         <!--end::Bullet-->
                                         <!--begin::Label-->
-                                        <div class="text-gray-500 flex-grow-1 me-4">Others</div>
+                                        <div class="text-gray-500 flex-grow-1 me-4">Total</div>
                                         <!--end::Label-->
                                         <!--begin::Stats-->
-                                        <div class="fw-bolder text-gray-700 text-xxl-end">$45,257</div>
+                                        <div class="fw-bolder text-gray-700 text-xxl-end">{{ $aprovadasAndNotAprovado ?? '' }}</div>
                                         <!--end::Stats-->
                                     </div>
                                     <!--end::Label-->
@@ -100,18 +100,18 @@
                     </div>
                     <!--end::Col-->
                     <!--begin::Col-->
-                    <div class="col-xl-7 col-xxl-8 mb-5 mb-xxl-10">
+                    <div class="col-xl-5 col-xxl-4 mb-xl-5 mb-xxl-10">
                         <!--begin::Engage widget 2-->
-                        <div class="card bgi-position-y-bottom bgi-position-x-end bgi-no-repeat bgi-size-cover min-h-250px h-xl-100 border-0 bg-gray-200" style="background-position: 100% 100%;background-size: 500px auto;background-image:url('assets/media/misc/city.png')">
+                        <div class="card bgi-position-y-bottom bgi-position-x-end bgi-no-repeat bgi-size-cover min-h-250px h-xl-100 border-0 bg-gray-200" style="background-position: 100% 100%;background-size: 500px auto;">
                             <!--begin::Body-->
                             <div class="card-body d-flex flex-column justify-content-center align-items-start ps-lg-15">
                                 <!--begin::Title-->
-                                <h3 class="text-gray-800 d-flex fs-2qx fw-bolder mb-4 mb-lg-8">Good admin theme
-                                    <br />is a tool of enthusiasm</h3>
+                                <h3 class="text-gray-800 d-flex fs-2qx fw-bolder mb-4 mb-lg-8">Ver a lista de empresas
+                                    <br />Registradas</h3>
                                 <!--end::Title-->
                                 <!--begin::Action-->
                                 <div class="m-0">
-                                    <a href='#' class="btn btn-danger fw-semibold" data-bs-target="#kt_modal_create_app" data-bs-toggle="modal">Create App</a>
+                                    <a href='{{ route('eventRegistration.index') }}' class="btn btn-danger fw-semibold" data-bs-target="#kt_modal_create_app" data-bs-toggle="modal">Lista</a>
                                 </div>
                                 <!--begin::Action-->
                             </div>

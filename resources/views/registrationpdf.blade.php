@@ -82,10 +82,10 @@
                 <tr>
                     <!--begin::User=-->
                     <td class="d-flex align-items-center">
-                        {{ $eRegistion->company_name }}
+                        {{ $eRegistion->company_name  ?? ''}}
                     </td>
                     <td class="d-flex align-items-center">
-                        {{$eRegistion->area_operation}}
+                        {{$eRegistion->area_operation ?? ''}}
                     </td>
                     <td>
                         @if(!$eRegistion->payment_state)
@@ -94,7 +94,7 @@
                             Pago
                         @endif
                     </td>
-                    <td> {{$eRegistion->eventrepresentative->full_name}}</td>
+                    <td> {{ $eRegistion->eventrepresentative->full_name ?? ''}}</td>
                 </tr>
                 <!--end::Table row-->
             @endforeach

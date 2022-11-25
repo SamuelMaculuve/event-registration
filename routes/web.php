@@ -36,9 +36,16 @@ Route::get('/successful', function () {
     return view('registration-successful');
 })->name('successful');
 Auth::routes();
+;
 
+Route::get('my_account', [App\Http\Controllers\MyAccountController::class, 'edit_profile'])->name('my_account');
+Route::get('my_account_update', [App\Http\Controllers\MyAccountController::class, 'update_profile'])->name('my_account.update');
+Route::get('my_account_chage_pass', [App\Http\Controllers\MyAccountController::class, 'change_pass'])->name('my_account.change_pass');
 
 Route::post('/approve/{eventRegistration}', [App\Http\Controllers\EventRegistrationController::class, 'approveCompany'])->name('approve');
+
+Route::post('/search', [App\Http\Controllers\EventRegistrationController::class, 'searchByNameOrCompany'])->name('searchByNameOrCompany');
+
 Route::resource('/eventRegistration','\App\Http\Controllers\EventRegistrationController');
 Route::get('generate-pdf', [App\Http\Controllers\EventRegistrationController::class, 'generatePDF'])->name('generate-pdf');
 Route::group(['middleware' => ['auth']], function() {
@@ -49,11 +56,11 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('send-mail', function () {
 
     $details = [
-        'title' => 'Mail from Teste',
-        'body' => 'This is for testing email using smtp'
+        'title' => 'Cadastro onfirmação de cadastro',
+        'body' => 'Confirmação do cadastro do evento Business Picth PMEs-B2B 2022'
     ];
 
-    \Mail::to('samuelmaculuve14@gmail.com')->send(new \App\Mail\MyTestMail($details));
+    \Mail::to('samuelmaculuve8@gmail.com')->send(new \App\Mail\MyTestMail($details));
 
     dd("Email is Sent.");
 });

@@ -14,7 +14,9 @@ class EventRegistrationController extends Controller
 
     public function index()
     {
-        return view('dashboard.index');
+        $eventRegistions = eventRegistration::orderBy('created_at', 'desc')->get();
+
+        return view('dashboard.index',compact('eventRegistions'));
     }
 
     public function create()
@@ -24,6 +26,15 @@ class EventRegistrationController extends Controller
 
     public function store(Request $request)
     {
+//        $validatedData = $request->validate([
+//            'image_comp' => 'required|image|mimes:jpg,png,jpeg,gif,svg',
+//        ]);
+
+//        $path = $request->file('image_comp')->store('public/comprovations');
+
+        $imageName = time().'.'.$request->image_comp->extension();
+
+        $request->image_comp->move(public_path('comprovations'), $imageName);
 
         $eRegistion = new eventRegistration();
         $eCompany = new eventCompany();
@@ -73,6 +84,7 @@ class EventRegistrationController extends Controller
         $eRegistion->expectations = $request->expectations;
         $eRegistion->lot = $request->lot;
         $eRegistion->terms_conditions = true;
+        $eRegistion->image_comprovation = $imageName;
         $eRegistion->save();
 
         $socialNetworks->social_instagram = $request->social_instagram;
@@ -101,7 +113,16 @@ class EventRegistrationController extends Controller
         $eCompany->event_registration_id = $eRegistion->id;
         $eCompany->save();
 
+
+        $details = [
+            'title' => 'Cadastro onfirmação de cadastro',
+            'body' => 'Confirmação do cadastro do evento Business Picth PMEs-B2B 2022'
+        ];
+
+        \Mail::to($request->r_email)->send(new \App\Mail\MyTestMail($details));
+
         return redirect('/successful');
+
     }
 
     public function show(eventRegistration $eventRegistration)
@@ -177,6 +198,25 @@ class EventRegistrationController extends Controller
         $pdf = PDF::loadView('registrationpdf')->setPaper('a4', 'landscape');
 
         return $pdf->download('registrationCompanys.pdf');
+    }
+    public function searchByNameOrCompany(Request $req)
+    {
+        $eventRegistions = '';
+
+        if($req->companyName != ''){
+            $eventRegistions = eventRegistration::
+            where('company_name', 'like', '%' . $req->companyName . '%')
+                ->get();
+        }
+
+        if($req->companyState != ''){
+            $eventRegistions = eventRegistration::
+                where('payment_state', 'like', '%' . $req->companyState . '%')
+                ->get();
+        }
+
+        return view('dashboard.index',compact('eventRegistions'));
+
     }
 
 

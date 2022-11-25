@@ -24,10 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $count = eventRegistration()->distinct('date')
-//            ->count();
-        $count = 2;
+        $count = eventRegistration::all()->count();
+//        $count = 2;
+        $notAprovado = eventRegistration::
+        where('payment_state', 1)->sum('lot');
+        $aprovadas = eventRegistration::
+        where('payment_state', 0)->sum('lot');
+        $aprovadasAndNotAprovado = eventRegistration::sum('lot');
 
-        return view('home',compact('count'));
+        return view('home',compact('count','notAprovado','aprovadas','aprovadasAndNotAprovado'));
     }
 }

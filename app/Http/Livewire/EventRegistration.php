@@ -39,9 +39,14 @@ class EventRegistration extends Component
 
         $lista = [];
 
-        if($this->company_name != ''){
+        if(!empty($this->company_name)){
             array_push($lista,["event_registrations.company_name","like",'%'.$this->company_name.'%']);
         }
+
+        if(!empty($this->estado) ){
+            array_push($lista,["event_registrations.payment_state","like",'%'.$this->estado.'%']);
+        }
+
 
         $this->filtro = $lista;
 
