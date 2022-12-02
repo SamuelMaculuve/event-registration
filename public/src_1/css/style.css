@@ -392,3 +392,6 @@ PRECOS FIM
 .form-control-lg {
     border-radius: none !important;
 }
+[role=menu] {
+   text-align: end;
+}

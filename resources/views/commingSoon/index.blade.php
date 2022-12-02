@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ asset('comming/common-css/jquery.classycountdown.css') }}" />
     <link href="{{ asset('comming/04-comming-soon/css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('comming/04-comming-soon/css/responsive.css') }}" rel="stylesheet">
-
 </head>
 <body>
 
@@ -31,7 +30,8 @@
                         da outra parte (cliente/parceiro) pelo seu negócio. Assim, deve conter apenas as informações
                         essenciais e diferenciadas.</p>
 
-                    <a href="/registration" class="submit-btn">Inscrever-se</a>
+                    <a href="/registration" class="submit-btn">Inscrever-se como empresa</a>
+                    <a href="/singleRegistration" class="submit-btn">Inscrever-se como singular</a>
                 </div><!-- main-content -->
             </div><!-- display-table-cell -->
         </div><!-- display-table -->

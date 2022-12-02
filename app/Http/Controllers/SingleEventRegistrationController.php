@@ -67,4 +67,21 @@ class SingleEventRegistrationController extends Controller
     {
         //
     }
+    public function approveSingle(Request $reg,SingleEventRegistration $singleEventRegistration)
+    {
+
+        if ($singleEventRegistration->payment_state == 1 && $reg->toSend == 1){
+
+            return redirect()->back()->with(['message' => 'Falha ao aprovar Empresa.']);
+
+        }else{
+
+            $singleEventRegistration->update([
+                'payment_state' => 1,
+            ]);
+
+            return redirect()->back()->with(['message' => 'Singular aprovada com sucesso.']);
+        }
+
+    }
 }

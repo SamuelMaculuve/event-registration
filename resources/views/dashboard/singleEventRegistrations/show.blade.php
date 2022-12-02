@@ -23,7 +23,7 @@
                             <div class="card-header">
                                 <!--begin::Card title-->
                                 <div class="card-title">
-                                    <h2 class="fw-bold">Detalhes da Empresa</h2>
+                                    <h2 class="fw-bold">Dados pessoas</h2>
                                 </div>
                                 <!--begin::Card title-->
                             </div>
@@ -41,10 +41,8 @@
                                     <!--begin::Info-->
                                     <div class="d-flex flex-column">
                                         <!--begin::Name-->
-                                        <a href="#" class="fs-4 fw-bold text-gray-900 text-hover-primary me-2">{{ $eventRegistration->company_name ?? ''}}</a>
-                                        <!--end::Name-->
                                         <!--begin::Email-->
-                                        <a href="#" class="fw-semibold text-gray-600 text-hover-primary"><b>Tipo de empresa : </b>{{ $eventRegistration->company_type ?? ''}}</a>
+                                        <a href="#" class="fw-semibold text-gray-600 text-hover-primary"><b>Nome : </b>{{ $singleEventRegistration->full_name ?? ''}}</a>
                                         <!--end::Email-->
                                     </div>
                                     <!--end::Info-->
@@ -53,7 +51,7 @@
 
                                 <!--end::Customer add buttons-->
                                 <!--begin::Customer change button-->
-                                @if(!$eventRegistration->payment_state)
+                                @if(!$singleEventRegistration->payment_state)
                                     <div class="mb-10">
                                         <a href="#" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_customer_search">Aprovar Empresa</a>
                                     </div>
@@ -72,7 +70,7 @@
                                         <div class="fw-semibold">
                                             <h4 class="text-gray-900 fw-bold">Expectativas para este evento.</h4>
                                             <div class="fs-6 text-white">
-                                                {{ $eventRegistration->expectations ?? ''}}
+                                                {{ $singleEventRegistration->expectations ?? ''}}
                                              </div>
                                         </div>
                                         <!--end::Content-->
@@ -116,15 +114,13 @@
                                             <td>Instagram</td>
                                             <td >
                                                 <!--begin::Delete-->
-                                                <a href="{{ $eventRegistration->socialnetworks->social_instagram ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
+                                                <a href="{{ $singleEventRegistration->socialnetworks->social_instagram ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                    <span class="svg-icon svg-icon-3">
-                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                            </svg>
-                                                                        </span>
+                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
+                                                    <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
+                                                    </svg>
+
                                                     <!--end::Svg Icon-->
                                                 </a>
                                                 <!--end::Delete-->
@@ -134,15 +130,13 @@
                                             <td>Facebook</td>
                                             <td >
                                                 <!--begin::Delete-->
-                                                <a href="{{ $eventRegistration->socialnetworks->social_facebook ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
+                                                <a href="{{ $singleEventRegistration->socialnetworks->social_facebook ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                    <span class="svg-icon svg-icon-3">
-                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                            </svg>
-                                                                        </span>
+                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
+<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
+</svg>
+
                                                     <!--end::Svg Icon-->
                                                 </a>
                                                 <!--end::Delete-->
@@ -152,15 +146,13 @@
                                             <td>Linkedin</td>
                                             <td >
                                                 <!--begin::Delete-->
-                                                <a href="{{ $eventRegistration->socialnetworks->social_linkedin ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
+                                                <a href="{{ $singleEventRegistration->socialnetworks->social_linkedin ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                    <span class="svg-icon svg-icon-3">
-                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                            </svg>
-                                                                        </span>
+                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
+<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
+</svg>
+
                                                     <!--end::Svg Icon-->
                                                 </a>
                                                 <!--end::Delete-->
@@ -170,15 +162,13 @@
                                             <td>Website</td>
                                             <td >
                                                 <!--begin::Delete-->
-                                                <a href="{{ $eventRegistration->socialnetworks->social_website ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
+                                                <a href="{{ $singleEventRegistration->socialnetworks->social_website ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                    <span class="svg-icon svg-icon-3">
-                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                            </svg>
-                                                                        </span>
+                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
+<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
+</svg>
+
                                                     <!--end::Svg Icon-->
                                                 </a>
                                                 <!--end::Delete-->
@@ -188,15 +178,13 @@
                                             <td>Tik Tok</td>
                                             <td >
                                                 <!--begin::Delete-->
-                                                <a href="{{ $eventRegistration->socialnetworks->social_tiktik ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
+                                                <a href="{{ $singleEventRegistration->socialnetworks->social_tiktik ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                    <span class="svg-icon svg-icon-3">
-                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                            </svg>
-                                                                        </span>
+                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
+<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
+</svg>
+
                                                     <!--end::Svg Icon-->
                                                 </a>
                                                 <!--end::Delete-->
@@ -206,15 +194,13 @@
                                             <td>Outra</td>
                                             <td >
                                                 <!--begin::Delete-->
-                                                <a href="{{ $eventRegistration->socialnetworks->social_outra ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
+                                                <a href="{{ $singleEventRegistration->socialnetworks->social_outra ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
                                                     <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                    <span class="svg-icon svg-icon-3">
-                                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z" fill="currentColor" />
-                                                                                <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="currentColor" />
-                                                                            </svg>
-                                                                        </span>
+                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
+<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
+</svg>
+
                                                     <!--end::Svg Icon-->
                                                 </a>
                                                 <!--end::Delete-->
@@ -254,8 +240,8 @@
                                     <!--begin::Price-->
 
                                     <span class="fw-semibold text-gray-600">
-                                       <a href="{{ asset('comprovations/'.$eventRegistration->image_comprovation ?? 'Item_sem_imagem.png') }}">
-                                         <img alt="Comprovativo" src="{{ asset('comprovations/'.$eventRegistration->image_comprovation ?? 'Item_sem_imagem.png') }}"
+                                       <a href="{{ asset('comprovations/'.$singleEventRegistration->image_comprovation ?? 'Item_sem_imagem.png') }}">
+                                         <img alt="Comprovativo" src="{{ asset('comprovations/'.$singleEventRegistration->image_comprovation ?? 'Item_sem_imagem.png') }}"
                                               width=150" height="70">
                                       </a></span>
                                     <!--end::Price-->
@@ -270,18 +256,18 @@
                                     <!--end::Plan-->
                                     <!--begin::Price-->
                                     <span class="fw-semibold text-gray-600">
-                                        {{ $eventRegistration->eventcompany->c_email ?? ''}}</span>
+                                        {{ $singleEventRegistration->email ?? ''}}</span>
                                     <!--end::Price-->
                                 </div>
                                 <!--end::Details-->
                                 <!--begin::Details-->
                                 <div class="mb-0">
                                     <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">Cell :</span>
+                                    <span class="badge badge-light-info me-2">Telefone :</span>
                                     <!--end::Plan-->
                                     <!--begin::Price-->
                                     <span class="fw-semibold text-gray-600">
-                                         {{ $eventRegistration->eventcompany->c_cell ?? ''}}
+                                         {{ $singleEventRegistration->telefone ?? ''}}
                                     </span>
                                     <!--end::Price-->
                                 </div>
@@ -289,11 +275,11 @@
                                 <!--begin::Details-->
                                 <div class="mb-0">
                                     <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">Telefone:</span>
+                                    <span class="badge badge-light-info me-2">Telefone com Whatsapp:</span>
                                     <!--end::Plan-->
                                     <!--begin::Price-->
                                     <span class="fw-semibold text-gray-600">
-                                         {{ $eventRegistration->eventcompany->c_telefone ?? ''}}
+                                         {{ $singleEventRegistration->telefone_whatsapp ?? ''}}
                                     </span>
                                     <!--end::Price-->
                                 </div>
@@ -301,11 +287,11 @@
                                 <!--begin::Details-->
                                 <div class="mb-0">
                                     <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">Nuit:</span>
+                                    <span class="badge badge-light-info me-2">Cargo:</span>
                                     <!--end::Plan-->
                                     <!--begin::Price-->
                                     <span class="fw-semibold text-gray-600">
-                                         {{ $eventRegistration->eventcompany->c_contact_nuit ?? '' }}
+                                         {{ $singleEventRegistration->role ?? '' }}
                                     </span>
                                     <!--end::Price-->
                                 </div>
@@ -313,11 +299,11 @@
                                 <!--begin::Details-->
                                 <div class="mb-0">
                                     <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">:</span>
+                                    <span class="badge badge-light-info me-2">Valor do pacote:</span>
                                     <!--end::Plan-->
                                     <!--begin::Price-->
                                     <span class="fw-semibold text-gray-600">
-
+                                        {{ $singleEventRegistration->lot ?? '' }}
                                     </span>
                                     <!--end::Price-->
                                 </div>
@@ -328,73 +314,6 @@
 
                             <!--begin::Seperator-->
                             <div class="separator separator-dashed mb-7"></div>
-                            <!--end::Seperator-->
-                            <!--begin::Section-->
-                            <div class="mb-10">
-                                <!--begin::Title-->
-                                <h5 class="mb-3">Detalhes do Representante</h5>
-                                <!--end::Title-->
-                                <!--begin::Details-->
-                                <div class="mb-0">
-                                    <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">Nome :</span>
-                                    <!--end::Plan-->
-                                    <!--begin::Price-->
-                                    <span class="fw-semibold text-gray-600">
-                                        {{ $eventRegistration->eventrepresentative->full_name ?? ''}}</span>
-                                    <!--end::Price-->
-                                </div>
-                                <!--end::Details-->
-                                <!--begin::Details-->
-                                <div class="mb-0">
-                                    <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">Cargo/Função :</span>
-                                    <!--end::Plan-->
-                                    <!--begin::Price-->
-                                    <span class="fw-semibold text-gray-600">
-                                        {{ $eventRegistration->eventrepresentative->role ?? ''}}</span>
-                                    <!--end::Price-->
-                                </div>
-                                <!--end::Details-->
-                                <!--begin::Details-->
-                                <div class="mb-0">
-                                    <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">E-mail:</span>
-                                    <!--end::Plan-->
-                                    <!--begin::Price-->
-                                    <span class="fw-semibold text-gray-600">
-                                        {{ $eventRegistration->eventrepresentative->r_email ?? '' }}
-                                    </span>
-                                    <!--end::Price-->
-                                </div>
-                                <!--end::Details-->
-                                <!--begin::Details-->
-                                <div class="mb-0">
-                                    <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">Cell:</span>
-                                    <!--end::Plan-->
-                                    <!--begin::Price-->
-                                    <span class="fw-semibold text-gray-600">
-                                        {{ $eventRegistration->eventrepresentative->r_cell ?? ''}}
-                                    </span>
-                                    <!--end::Price-->
-                                </div>
-                                <!--end::Details-->
-                                <!--begin::Details-->
-                                <div class="mb-0">
-                                    <!--begin::Plan-->
-                                    <span class="badge badge-light-info me-2">Whatsapp:</span>
-                                    <!--end::Plan-->
-                                    <!--begin::Price-->
-                                    <span class="fw-semibold text-gray-600">
-                                        {{ $eventRegistration->eventrepresentative->r_whatsapp ?? '' }}
-                                    </span>
-                                    <!--end::Price-->
-                                </div>
-                                <!--end::Details-->
-
-                            </div>
-                            <!--end::Section-->
 
                         </div>
                         <!--end::Card body-->
@@ -432,7 +351,7 @@
                             <!--begin::Content-->
                             <div class="text-center mb-12">
                                 <h1 class="fw-bold mb-3">Alterar estado do pagamento</h1>
-                                <div class="text-gray-400 fw-semibold fs-5">confirme se a Empresa fez o pagamento</div>
+                                <div class="text-gray-400 fw-semibold fs-5">confirme se o singular fez o pagamento</div>
                             </div>
                             <!--end::Content-->
                             <!--begin::Search-->
@@ -440,12 +359,12 @@
                                 <!--begin::Form-->
                                 <center>
                                     <form data-kt-search-element="form" class="w-100 position-relative mb-5" autocomplete="off"
-                                          action="{{ route('approve',$eventRegistration->id ?? '') }}" method="POST">
+                                          action="{{ route('approve.single',$singleEventRegistration->id ?? '') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="toSend" value="1">
                                         <div class="mb-10 align-content-center">
 
-                                            <button class="btn btn-light-primary">Aprovar Empresa</button>
+                                            <button class="btn btn-light-primary">Aprovar Singular</button>
                                         </div>
                                     </form>
                                 </center>
