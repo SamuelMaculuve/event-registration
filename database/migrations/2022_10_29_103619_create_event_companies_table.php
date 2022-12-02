@@ -16,11 +16,11 @@ class CreateEventCompaniesTable extends Migration
         Schema::create('event_companies', function (Blueprint $table) {
             $table->id();
             $table->string('c_email')->nullable();
-            $table->string('c_cell');
-            $table->string('c_telefone');
-            $table->string('c_whatsapp');
-            $table->string('c_contact_nuit');
-            $table->string('c_logo');
+            $table->string('c_cell')->nullable();
+            $table->string('c_telefone')->nullable();
+            $table->string('c_whatsapp')->nullable();
+            $table->string('c_contact_nuit')->nullable();
+            $table->string('c_logo')->nullable();
             $table->unsignedBigInteger('event_registration_id')->nullable();
             $table->foreign('event_registration_id')->references('id')->on('event_registrations')->onDelete('cascade');
             $table->timestamps();

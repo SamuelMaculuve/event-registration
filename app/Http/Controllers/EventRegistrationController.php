@@ -108,8 +108,6 @@ class EventRegistrationController extends Controller
         $eCompany->c_cell = $request->c_cell;
         $eCompany->c_telefone = $request->c_telefone;
         $eCompany->c_whatsapp = $request->c_whatsapp;
-        $eCompany->c_contact_nuit = $request->c_contact_nuit;
-        $eCompany->c_logo = 10;
         $eCompany->event_registration_id = $eRegistion->id;
         $eCompany->save();
 
@@ -127,7 +125,6 @@ class EventRegistrationController extends Controller
 
     public function show(eventRegistration $eventRegistration)
     {
-//        return dd($eventRegistration->eventrepresentative);
         return view('dashboard.show',compact('eventRegistration'));
     }
 

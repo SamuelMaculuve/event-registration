@@ -16,10 +16,10 @@ class CreateEventRepresentativesTable extends Migration
         Schema::create('event_representatives', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
-            $table->string('role');
-            $table->string('r_email');
-            $table->string('r_cell');
-            $table->string('r_whatsapp');
+            $table->string('role')->nullable();
+            $table->string('r_email')->nullable();
+            $table->string('r_cell')->nullable();
+            $table->string('r_whatsapp')->nullable();
             $table->unsignedBigInteger('event_registration_id')->nullable();
             $table->foreign('event_registration_id')->references('id')->on('event_registrations')->onDelete('cascade');
             $table->timestamps();

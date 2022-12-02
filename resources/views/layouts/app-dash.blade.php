@@ -246,7 +246,18 @@
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-                                        <span class="menu-title">Registros</span>
+                                        <span class="menu-title">Registros de Empresas</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link " href="{{ route('single-event-registration.index') }}">
+												<span class="menu-bullet">
+													<span class="bullet bullet-dot"></span>
+												</span>
+                                        <span class="menu-title">Registros de Singulares</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>

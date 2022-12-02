@@ -32,79 +32,39 @@
     <section class="right-section full-height mt-5" >
 
         <div class="wrapper mt-5" >
-            <form enctype="multipart/form-data" action="{{ route('eventRegistration.store') }}" id="wizard" method="POST" class="form-imput-label">
+            <form enctype="multipart/form-data" action="{{ route('single-event-registration.store') }}" id="wizard" method="POST" class="form-imput-label">
             @csrf
-            <!-- SECTION 1 -->
+            <!-- SECTION 4 -->
                 <h2></h2>
                 <section>
+
                     <div class="form-header">
-                        <h3>Informação da Empresa</h3>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-12">
-                            <input type="text" placeholder="Nome da Empresa" required title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" name="company_name" id="company_name">
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input type="text" placeholder="Área de Actuação/Actividade" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" name="area_operation" required>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input type="number" placeholder="Nuit" id="nuit" maxlength="9" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid w-100 " name="nuit" required>
-                        </div>
-
-                        <div class="form-group col-sm-12">
-                            <div class="select-wrapper">
-                                <select class="form-control form-control-lg form-control-solid" name="company_type" required>
-                                    <option value="0">Selecionar Tipo de empresa</option>
-                                    <option value="Unipessoal">Unipessoal</option>
-                                    <option value="Limitada">Limitada</option>
-                                    <option value="Sociedade anônima">Sociedade anônima</option>
-                                    <option value="Outro">Outro</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <div class="select-wrapper">
-                                <select class="form-control form-control-lg form-control-solid" name="province" required>
-                                    <option value="0">Selecionar Provincia</option>
-                                    <option value="Cabo Delgado">Cabo Delgado</option>
-                                    <option value="Gaza">Gaza</option>
-                                    <option value="Inhambane">Inhambane</option>
-                                    <option value="Manica">Manica</option>
-                                    <option value="Maputo">Maputo</option>
-                                    <option value="Cidade de Maputo">Cidade de Maputo</option>
-                                    <option value="Nampula">Nampula</option>
-                                    <option value="Niassa">Niassa</option>
-                                    <option value="Sofala">Sofala</option>
-                                    <option value="Tete">Tete</option>
-                                    <option value="Zambezia">Zambezia</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input type="text" placeholder="Localização" required title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" name="location">
-                        </div>
+                        <h3>Dados Pessoais</h3>
                     </div>
 
-                    <div class="row">
-
+                    <div class="form-row">
                         <div class="form-group col-sm-12">
-                            <div >
-                                <select class="form-control form-control-lg form-control-solid" name="action_time_market" required>
-                                    <option value="0">Selecionar o Tempo de Actuação no mercado ---</option>
-                                    <option value="1-3">1-3  anos</option>
-                                    <option value="4-7">4-7 anos</option>
-                                    <option value="8-9">8-9 anos</option>
-                                    <option value="9-10">9-10 anos</option>
-                                </select>
-                            </div>
+                            <input name="full_name" type="text" placeholder="Nome completo " title="Por valor, coloque um valor valido"
+                                   class="form-control form-control-lg form-control-solid" required>
                         </div>
+
+                        <div class="form-group col-sm-6">
+                            <input name="role" type="text" placeholder="Cargo/Função" title="Por valor, coloque um valor valido"
+                                   class="form-control form-control-lg form-control-solid" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input name="email" type="email" placeholder="E-mail" title="Email Invalido"
+                                   class="form-control form-control-lg form-control-solid">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input name="telefone" type="number" placeholder="Telefone" maxlength="9" title="Por valor, coloque um valor valido"
+                                   class="form-control form-control-lg form-control-solid">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <input name="telefone_whatsapp" type="number" placeholder="Whatsapp" maxlength="9" title="Por valor, coloque um valor valido"
+                                   class="form-control form-control-lg form-control-solid">
+                        </div>
+
                     </div>
 
                 </section>
@@ -113,7 +73,7 @@
                 <h2></h2>
                 <section>
                     <div class="form-header">
-                        <h3>Caso a empresa use plataformas de divulgação on-line queira por favor queira indicar</h3>
+                        <h3>Caso use plataformas de divulgação on-line queira por favor queira indicar</h3>
                     </div>
                     <div class="row">
                         <div class="form-group col-sm-6">
@@ -145,78 +105,6 @@
                         </div>
 
                     </div>
-                </section>
-
-                <!-- SECTION 3 -->
-                <h2></h2>
-                <section>
-                    <div class="form-header">
-                        <h3>Contactos da Empresa</h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input name="c_email" type="email" placeholder="E-mail" title="Email invalido"
-                                   class="form-control form-control-lg form-control-solid" required>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input name="c_cell" type="number" placeholder="Cell" maxlength="9" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" id="c_cell" required>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input name="c_telefone" type="number" placeholder="Telefone" maxlength="9" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" required>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input name="c_whatsapp" type="number" placeholder="Whatsapp" maxlength="9" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" required>
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <!-- SECTION 4 -->
-                <h2></h2>
-                <section>
-
-                    <div class="form-header">
-                        <h3>Detalhes do representante da empresa</h3>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-sm-4">
-                            <input name="full_name" type="text" placeholder="Nome completo " title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" required>
-                        </div>
-
-                        <div class="form-group col-sm-4">
-                            <input name="role" type="text" placeholder="Cargo/Função" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid" required>
-                        </div>
-                        <div class="form-group col-sm-4">
-                            <input name="r_email" type="email" placeholder="E-mail" title="Email Invalido"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input name="r_cell" type="number" placeholder="Telefone" maxlength="9" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input name="r_whatsapp" type="number" placeholder="Whatsapp" maxlength="9" title="Por valor, coloque um valor valido"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-
-                    </div>
-
                 </section>
 
                 <!-- SECTION 5 -->

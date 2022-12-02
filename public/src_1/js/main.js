@@ -65,6 +65,7 @@ $(function(){
             // alert("Alhamdulillah, Alkhery Member is already Registered.");
             $("#wizard").submit();
         }
+
     });
     $('.wizard > .steps li a').click(function(){
     	$(this).parent().addClass('checked');

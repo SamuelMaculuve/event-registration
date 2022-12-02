@@ -20,9 +20,9 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
-//Route::get('/welcome', function () {
-//    return view('home');
-//});
+Route::get('/singleRegistration', function () {
+    return view('single-registration');
+});
 
 Route::get('/view', function () {
     return view('view');
@@ -47,12 +47,15 @@ Route::post('/approve/{eventRegistration}', [App\Http\Controllers\EventRegistrat
 Route::post('/search', [App\Http\Controllers\EventRegistrationController::class, 'searchByNameOrCompany'])->name('searchByNameOrCompany');
 
 Route::resource('/eventRegistration','\App\Http\Controllers\EventRegistrationController');
+Route::resource('/single-event-registration','\App\Http\Controllers\SingleEventRegistrationController');
+
 Route::get('generate-pdf', [App\Http\Controllers\EventRegistrationController::class, 'generatePDF'])->name('generate-pdf');
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('roles', '\App\Http\Controllers\RoleController');
     Route::resource('users', '\App\Http\Controllers\UserController');
 });
+
 Route::get('send-mail', function () {
 
     $details = [
