@@ -69,44 +69,6 @@
 
                 </section>
 
-                <!-- SECTION 2 -->
-                <h2></h2>
-                <section>
-                    <div class="form-header">
-                        <h3>Caso use plataformas de divulgação on-line queira por favor queira indicar</h3>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input name="social_instagram" type="text" placeholder="Instagram"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input name="social_facebook" type="text" placeholder="Facebook"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input name="social_linkedin" type="text" placeholder="Linkedin"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input name="social_website" type="text" placeholder="Website"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-sm-6">
-                            <input name="social_tiktik" type="text" placeholder="Tik Tok"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <input name="social_outra" type="text" placeholder="Outra"
-                                   class="form-control form-control-lg form-control-solid">
-                        </div>
-
-                    </div>
-                </section>
-
                 <!-- SECTION 5 -->
                 <h2></h2>
                 <section>
