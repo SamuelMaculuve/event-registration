@@ -194,11 +194,7 @@
                                 <td class="d-flex align-items-center">
                                     <!--begin:: Avatar -->
                                     <div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-                                        <a href="#">
-                                            <div class="symbol-label">
-                                                <img src="../../../assets/media/avatars/300-6.jpg" alt="Emma Smith" class="w-100" />
-                                            </div>
-                                        </a>
+
                                     </div>
                                     <!--end::Avatar-->
                                     <!--begin::User details-->

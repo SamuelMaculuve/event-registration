@@ -58,7 +58,7 @@
         <div class="text-center">
             <!--begin::Submit button-->
             <button type="submit" class="btn btn-lg btn-primary w-100 mb-5">
-             ugug</button>
+             Entrar</button>
             <!--end::Submit button-->
 
         </div>
