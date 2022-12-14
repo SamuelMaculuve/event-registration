@@ -53,7 +53,7 @@
                                 <!--begin::Customer change button-->
                                 @if(!$singleEventRegistration->payment_state)
                                     <div class="mb-10">
-                                        <a href="#" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_customer_search">Aprovar Empresa</a>
+                                        <a href="#" class="btn btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_customer_search">Aprovar Singular</a>
                                     </div>
                                 @else
                                     <div class="mb-10">
@@ -82,140 +82,7 @@
                             <!--end::Card body-->
                         </div>
                         <!--end::Customer-->
-                        <!--begin::Pricing-->
-                        <div class="card card-flush pt-3 mb-5 mb-lg-10">
-                            <!--begin::Card header-->
-                            <div class="card-header">
-                                <!--begin::Card title-->
-                                <div class="card-title">
-                                    <h2 class="fw-bold">Redes sociais</h2>
-                                </div>
-                                <!--begin::Card title-->
 
-                            </div>
-                            <!--end::Card header-->
-                            <!--begin::Card body-->
-                            <div class="card-body pt-0">
-                                <!--begin::Table wrapper-->
-                                <div class="table-responsive">
-                                    <!--begin::Table-->
-                                    <table class="table align-middle table-row-dashed fs-6 fw-semibold gy-4" id="kt_subscription_products_table">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                        <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
-                                            <th class="min-w-300px">Rede</th>
-                                            <th class="min-w-100px">Link</th>
-                                        </tr>
-                                        </thead>
-                                        <!--end::Table head-->
-                                        <!--begin::Table body-->
-                                        <tbody class="text-gray-600">
-                                        <tr>
-                                            <td>Instagram</td>
-                                            <td >
-                                                <!--begin::Delete-->
-                                                <a href="{{ $singleEventRegistration->socialnetworks->social_instagram ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
-                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
-                                                    <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
-                                                    </svg>
-
-                                                    <!--end::Svg Icon-->
-                                                </a>
-                                                <!--end::Delete-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Facebook</td>
-                                            <td >
-                                                <!--begin::Delete-->
-                                                <a href="{{ $singleEventRegistration->socialnetworks->social_facebook ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
-                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
-<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
-</svg>
-
-                                                    <!--end::Svg Icon-->
-                                                </a>
-                                                <!--end::Delete-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Linkedin</td>
-                                            <td >
-                                                <!--begin::Delete-->
-                                                <a href="{{ $singleEventRegistration->socialnetworks->social_linkedin ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
-                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
-<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
-</svg>
-
-                                                    <!--end::Svg Icon-->
-                                                </a>
-                                                <!--end::Delete-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Website</td>
-                                            <td >
-                                                <!--begin::Delete-->
-                                                <a href="{{ $singleEventRegistration->socialnetworks->social_website ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
-                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
-<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
-</svg>
-
-                                                    <!--end::Svg Icon-->
-                                                </a>
-                                                <!--end::Delete-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tik Tok</td>
-                                            <td >
-                                                <!--begin::Delete-->
-                                                <a href="{{ $singleEventRegistration->socialnetworks->social_tiktik ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
-                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
-<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
-</svg>
-
-                                                    <!--end::Svg Icon-->
-                                                </a>
-                                                <!--end::Delete-->
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Outra</td>
-                                            <td >
-                                                <!--begin::Delete-->
-                                                <a href="{{ $singleEventRegistration->socialnetworks->social_outra ?? ''}}" class="btn btn-icon btn-flex btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-action="product_remove">
-                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
-                                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"/>
-<path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"/>
-</svg>
-
-                                                    <!--end::Svg Icon-->
-                                                </a>
-                                                <!--end::Delete-->
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                        <!--end::Table body-->
-                                    </table>
-                                    <!--end::Table-->
-                                </div>
-                                <!--end::Table wrapper-->
-                            </div>
-                            <!--end::Card body-->
-                        </div>
-                        <!--end::Pricing-->
                 </div>
                 <!--end::Content-->
                 <!--begin::Sidebar-->
@@ -247,7 +114,7 @@
                                     <!--end::Price-->
                                     <div class="separator separator-dashed mb-7"></div>
                                 </div>
-                                <h5 class="mb-3"> Contactos da Empresa </h5>
+                                <h5 class="mb-3"> Contactos da Singular </h5>
                                 <!--end::Title-->
                                 <!--begin::Details-->
                                 <div class="mb-0">
