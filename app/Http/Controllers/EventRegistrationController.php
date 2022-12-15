@@ -85,6 +85,7 @@ class EventRegistrationController extends Controller
         $eRegistion->lot = $request->lot;
         $eRegistion->terms_conditions = true;
         $eRegistion->image_comprovation = $imageName;
+        $eRegistion->payment_state = 0;
         $eRegistion->save();
 
         $socialNetworks->social_instagram = $request->social_instagram;
@@ -113,7 +114,7 @@ class EventRegistrationController extends Controller
 
 
         $details = [
-            'title' => 'Cadastro onfirmação de cadastro',
+            'title' => 'Cadastro confirmação de cadastro',
             'body' => 'Confirmação do cadastro do evento Business Picth PMEs-B2B 2022'
         ];
 
@@ -146,13 +147,15 @@ class EventRegistrationController extends Controller
                  'payment_state' => 1,
              ]);
 
+            $details = [
+                'title' => 'Confirmação do pagamento',
+                'body' => 'Confirmação do pagamento ao evento Business Picth PMEs-B2B 2022'
+            ];
+
+            \Mail::to($eventRegistration->r_email)->send(new \App\Mail\MyTestMail($details));
+
             return redirect()->back()->with(['message' => 'Empresa aprovada com sucesso.']);
         }
-
-    }
-
-    public function edit(eventRegistration $eventRegistration)
-    {
 
     }
 
@@ -172,7 +175,6 @@ class EventRegistrationController extends Controller
             return redirect()->back()->with(['message' => 'Empresa aprovada com sucesso.']);
         }
     }
-
 
     public function destroy(eventRegistration $eventRegistration)
     {

@@ -43,9 +43,10 @@ Route::get('my_account_update', [App\Http\Controllers\MyAccountController::class
 Route::get('my_account_chage_pass', [App\Http\Controllers\MyAccountController::class, 'change_pass'])->name('my_account.change_pass');
 
 Route::post('/approve/{eventRegistration}', [App\Http\Controllers\EventRegistrationController::class, 'approveCompany'])->name('approve');
-Route::post('/approveSingle/{eventRegistration}', [App\Http\Controllers\SingleEventRegistrationController::class, 'approveSingle'])->name('approve.single');
+Route::post('/approveSingle/{singleEventRegistration}', [App\Http\Controllers\SingleEventRegistrationController::class, 'approveSingle'])->name('approve.single');
 
 Route::post('/search', [App\Http\Controllers\EventRegistrationController::class, 'searchByNameOrCompany'])->name('searchByNameOrCompany');
+Route::post('/searchSingle', [App\Http\Controllers\SingleEventRegistrationController::class, 'searchByNameOrCompany'])->name('searchByNameOrSingle');
 
 Route::resource('/eventRegistration','\App\Http\Controllers\EventRegistrationController');
 Route::resource('/single-event-registration','\App\Http\Controllers\SingleEventRegistrationController');

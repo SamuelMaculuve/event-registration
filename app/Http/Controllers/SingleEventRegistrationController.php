@@ -10,13 +10,14 @@ class SingleEventRegistrationController extends Controller
 
     public function index()
     {
-        $singleEventRegistration = SingleEventRegistration::all();
+        $singleEventRegistration = SingleEventRegistration::orderBy('id', 'DESC')->get();;
 
         return view('dashboard.singleEventRegistrations.index',compact('singleEventRegistration'));
     }
 
     public function store(Request $request)
     {
+
         $eventRegistration = new SingleEventRegistration();
         $imageName = time().'.'.$request->image_comp->extension();
 
@@ -24,20 +25,20 @@ class SingleEventRegistrationController extends Controller
 
         $eventRegistration->full_name = $request->full_name;
         $eventRegistration->role = $request->role;
-        $eventRegistration->email = $request->r_email;
-        $eventRegistration->telefone = $request->r_cell;
-        $eventRegistration->telefone_whatsapp = $request->r_whatsapp;
+        $eventRegistration->email = $request->email;
+        $eventRegistration->telefone = $request->telefone;
+        $eventRegistration->telefone_whatsapp = $request->telefone_whatsapp;
 
         $eventRegistration->expectations = $request->expectations;
         $eventRegistration->lot = $request->lot;
         $eventRegistration->terms_conditions = $request->terms_conditions;
         $eventRegistration->payment_state = $request->payment_state;
         $eventRegistration->image_comprovation = $imageName;
+        $eventRegistration->payment_state = 0;
         $eventRegistration->save();
 
-
         $details = [
-            'title' => 'Cadastro onfirmação de cadastro',
+            'title' => 'Cadastro confirmação de cadastro',
             'body' => 'Confirmação do cadastro do evento Business Picth PMEs-B2B 2022'
         ];
 
@@ -52,25 +53,10 @@ class SingleEventRegistrationController extends Controller
         return view('dashboard.singleEventRegistrations.show',compact('singleEventRegistration'));
     }
 
-
-    public function edit(SingleEventRegistration $singleEventRegistration)
-    {
-        //
-    }
-
-    public function update(Request $request, SingleEventRegistration $singleEventRegistration)
-    {
-        //
-    }
-
-    public function destroy(SingleEventRegistration $singleEventRegistration)
-    {
-        //
-    }
-    public function approveSingle(Request $reg,SingleEventRegistration $singleEventRegistration)
+    public function approveSingle(SingleEventRegistration $singleEventRegistration)
     {
 
-        if ($singleEventRegistration->payment_state == 1 && $reg->toSend == 1){
+        if ($singleEventRegistration->payment_state == 1 ){
 
             return redirect()->back()->with(['message' => 'Falha ao aprovar Empresa.']);
 
@@ -80,8 +66,35 @@ class SingleEventRegistrationController extends Controller
                 'payment_state' => 1,
             ]);
 
+            $details = [
+                'title' => 'Confirmação do pagamento',
+                'body' => 'Confirmação do pagamento ao evento Business Picth PMEs-B2B 2022'
+            ];
+
+            \Mail::to($singleEventRegistration->email)->send(new \App\Mail\MyTestMail($details));
+
             return redirect()->back()->with(['message' => 'Singular aprovada com sucesso.']);
         }
+
+    }
+
+    public function searchByNameOrCompany(Request $req)
+    {
+        $singleEventRegistration = '';
+
+        if($req->singularName != ''){
+            $singleEventRegistration = SingleEventRegistration::
+            where('full_name', 'like', '%' . $req->singularName . '%')
+                ->get();
+        }
+
+        if($req->companyState != ''){
+            $singleEventRegistration = SingleEventRegistration::
+            where('payment_state', 'like', '%' . $req->companyState . '%')
+                ->get();
+        }
+
+        return view('dashboard.singleEventRegistrations.index',compact('singleEventRegistration'));
 
     }
 }
