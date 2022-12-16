@@ -201,6 +201,8 @@
                 <section>
                     <div class="form-header">
                         <h3>Queira por favor efectuar o pagamento.</h3>
+                        <p>Número de conta Millennium Bim- 443961435
+                        <br/>NIB- 000100000044396143557 </p>
                     </div>
                     <div class="form-row db-padding-btm db-attached">
                         <div class="wrapper mt-5" >
